@@ -1,0 +1,9 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+	<title>mail-outline-svg</title>
+	<style>
+		tspan { white-space:pre }
+		.s0 { fill: none;stroke: #ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width: 32 } 
+	</style>
+	<path id="Layer" class="s0" d="m48 136c0-22.09 17.91-40 40-40h336c22.09 0 40 17.91 40 40v240c0 22.09-17.91 40-40 40h-336c-22.09 0-40-17.91-40-40v-240z" />
+	<path id="Layer" class="s0" d="m400 160l-144 112l-144-112" />
+</svg>
