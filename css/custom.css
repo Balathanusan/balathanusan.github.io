@@ -42,7 +42,9 @@ p {
   line-height: 1.5;
   color: #9ab1c5;
 }
-
+.timeline-wrapper p span {
+  color: #ffffff;
+}
 h1,
 h2,
 h3,
