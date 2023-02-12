@@ -1,6 +1,8 @@
 (function ($) {
   "use strict";
 
+  document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+
   // HEADER
   $(".navbar").headroom();
 

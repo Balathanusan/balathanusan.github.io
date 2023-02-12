@@ -447,7 +447,9 @@ strong {
 .google-map iframe {
   width: 100%;
 }
-
+.contact a {
+  color: #f7f3f3;
+}
 .contact-info {
   background: #272d4e;
   border-radius: 0 0 3px 3px;
