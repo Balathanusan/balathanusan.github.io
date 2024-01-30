@@ -495,6 +495,10 @@ strong {
 .footer a {
   color: #ffffff;
 }
+.project .small {
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
 .projectList .item {
   padding: 1rem;
   margin-bottom: 2rem;
@@ -580,6 +584,14 @@ strong {
   font-weight: 500;
   margin-left: 0.5rem;
   color: #9ab1c5;
+}
+.projectList .section .secSubtitle p {
+  font-weight: 500;
+  color: #9ab1c5;
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 4rem;
+  /* font-style: italic; */
 }
 .projectList .section .secTitle h5:before {
   color: #00f9d0;

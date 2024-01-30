@@ -1,0 +1,8 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+	<title>location-outline-svg</title>
+	<style>
+		.s0 { fill: none;stroke: #ffffff;stroke-linecap: round;stroke-linejoin: round;stroke-width: 32 } 
+	</style>
+	<path id="Layer" fill-rule="evenodd" class="s0" d="m256 48c-79.5 0-144 61.4-144 137 0 87 96 224.9 131.3 272.5 1.4 2 3.3 3.6 5.5 4.8 2.3 1.1 4.7 1.7 7.2 1.7 2.5 0 4.9-0.6 7.2-1.7 2.2-1.2 4.1-2.8 5.5-4.8 35.3-47.6 131.3-185.4 131.3-272.5 0-75.6-64.5-137-144-137z"/>
+	<path id="Layer" class="s0" d="m256 240c-26.5 0-48-21.5-48-48 0-26.5 21.5-48 48-48 26.5 0 48 21.5 48 48 0 26.5-21.5 48-48 48z"/>
+</svg>
