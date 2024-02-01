@@ -48,7 +48,7 @@
       content="https://balathanusan.github.io/images/cover.png"
     />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-123857994-1"
@@ -1406,4 +1406,34 @@
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
   </body>
+  <!-- Google Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      doc,
+      addDoc,
+      serverTimestamp,
+    } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyCPMTMNBBFi13ZjAsJ4WpXZH-xS9ht15vI",
+      authDomain: "portfolio-1f7d2.firebaseapp.com",
+      projectId: "portfolio-1f7d2",
+      storageBucket: "portfolio-1f7d2.appspot.com",
+      messagingSenderId: "631767602765",
+      appId: "1:631767602765:web:b61f898e8bf5bf6b036e04",
+    };
+    const app = initializeApp(firebaseConfig);
+
+    const db = getFirestore(app);
+
+    const docRef = await addDoc(collection(db, "Views"), {
+      platform: window.navigator.platform,
+      vendor: window.navigator.vendor,
+      language: window.navigator.language,
+      screen: `${window.screen.availWidth}px * ${window.screen.availHeight}px`,
+      timestamp: serverTimestamp(),
+    });
+  </script>
 </html>
