@@ -350,7 +350,7 @@ strong {
 
 .timeline-wrapper {
   position: relative;
-  padding: 22px 0;
+  padding: 6px 0;
 }
 .timeline-wrapper:last-child:before {
   height: 0;
@@ -358,18 +358,18 @@ strong {
 .timeline-wrapper:before {
   content: "";
   background: #272d4e;
-  width: 3px;
+  width: 4px;
   height: 100%;
   position: absolute;
-  left: 38px;
+  left: 8px;
 }
 
 .timeline-yr {
   background: #272d4e;
   border-radius: 100%;
   position: absolute;
-  width: 75px;
-  height: 75px;
+  width: 20px;
+  height: 20px;
   line-height: 75px;
   text-align: center;
 }
@@ -384,9 +384,11 @@ strong {
 .timeline-info {
   display: inline-block;
   vertical-align: top;
-  margin-left: 6em;
+  margin-left: 3em;
 }
-
+.timeline-info h3 {
+  margin-top: -4px;
+}
 .owl-carousel .owl-nav span {
   display: none;
 }
@@ -591,6 +593,7 @@ strong {
   text-align: center;
   font-size: 1.4rem;
   margin-top: 4rem;
+  margin-bottom: 0rem;
   /* font-style: italic; */
 }
 .projectList .section .secTitle h5:before {
