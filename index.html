@@ -1,22 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="" />
     <meta name="author" content="Balathanusan Jeyarasan" />
 
-    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico" />
+    <link type="image/x-icon" rel="shortcut icon" href="assets/favicon.ico" />
 
     <title>Balathanusan Jeyarasan | Portfolio</title>
-
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/custom.css" />
 
     <meta property="og:locale" content="en" />
     <meta
@@ -24,31 +18,83 @@
       content="Balathanusan Jeyarasan | Portfolio"
     />
     <meta name="keywords" content="Balathanusan Jeyarasan, Portfolio" />
-    <meta name="description" content="Checkout my portfolio." />
+    <meta
+      name="description"
+      content="Discover the creative front-end development portfolio of Balathanusan Jeyarasan."
+    />
     <meta
       data-hid="og:url"
       property="og:url"
       content="https://balathanusan.github.io/"
     />
     <meta property="og:title" content="Balathanusan Jeyarasan | Portfolio" />
-    
+
     <meta
       data-hid="og:description"
       property="og:description"
-      content="Checkout my portfolio."
+      content="Discover the creative front-end development portfolio of Balathanusan Jeyarasan."
     />
     <meta
       property="og:image"
-      content="https://balathanusan.github.io/images/cover.png"
+      content="https://balathanusan.github.io/assets/cover.png"
     />
     <meta name="twitter:url" content="https://balathanusan.github.io/" />
     <meta name="twitter:title" content="Balathanusan Jeyarasan | Portfolio" />
-    <meta name="twitter:description" content="Checkout my portfolio." />
+    <meta
+      name="twitter:description"
+      content="Discover the creative front-end development portfolio of Balathanusan Jeyarasan."
+    />
     <meta
       name="twitter:image"
-      content="https://balathanusan.github.io/images/cover.png"
+      content="https://balathanusan.github.io/assets/cover.png"
     />
 
+    <link href="app.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #000000;
+      }
+      .marquee {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        animation-duration: 40s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .marquee.pause {
+        animation-play-state: paused;
+      }
+      .marquee.left-to-right {
+        animation-name: left-to-right;
+      }
+      .marquee.right-to-left {
+        animation-name: right-to-left;
+      }
+      @keyframes left-to-right {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      @keyframes right-to-left {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
     <!-- Google Analytics -->
     <script
       async
@@ -64,1426 +110,60 @@
       gtag("config", "G-P9TRY4Q37Z");
     </script>
   </head>
-  <body class="dark-mode">
-    <!-- MENU -->
-    <nav class="navbar navbar-expand-md navbar-light">
-      <div class="container">
-        <a class="navbar-brand" href="/"> Balathanusan Jeyarasan </a>
+  <body>
+    <div id="app"></div>
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-lg-auto">
-            <li class="nav-item">
-              <a href="#about" class="nav-link"
-                ><span data-hover="About">About</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#highlights" class="nav-link"
-                ><span data-hover="Highlights">Highlights</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#skills" class="nav-link"
-                ><span data-hover="Skills">Skills</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#projects" class="nav-link"
-                ><span data-hover="Projects">Works</span></a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        doc,
+        addDoc,
+        updateDoc,
+        arrayUnion,
+        serverTimestamp,
+      } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
 
-    <!-- ABOUT -->
-    <section
-      class="about full-screen d-lg-flex justify-content-center align-items-center"
-      id="about"
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-            <div class="about-text">
-              <h1 class="animated animated-text">
-                <span class="mr-2">Hi, I'm</span>
-                <div class="animated-info">
-                  <span class="animated-item">an Engineer</span>
-                  <span class="animated-item">a Gamer</span>
-                  <span class="animated-item">a Self-Learner</span>
-                </div>
-              </h1>
+      const firebaseConfig = {
+        apiKey: "AIzaSyCPMTMNBBFi13ZjAsJ4WpXZH-xS9ht15vI",
+        authDomain: "portfolio-1f7d2.firebaseapp.com",
+        projectId: "portfolio-1f7d2",
+        storageBucket: "portfolio-1f7d2.appspot.com",
+        messagingSenderId: "631767602765",
+        appId: "1:631767602765:web:b61f898e8bf5bf6b036e04",
+      };
+      const app = initializeApp(firebaseConfig);
 
-              <p>
-                A creative Front-End Developer with 4 years of experience
-                building responsive websites and hybrid apps.
-              </p>
-              <p>
-                Have a serious passion for creating intuitive, modern, and
-                dynamic user interfaces.
-              </p>
+      const db = getFirestore(app);
 
-              <p>
-                My love for frontend stems from the joy of creating visually
-                stunning and user-centric applications.
-              </p>
-              <div class="custom-btn-group mt-4">
-                <a
-                  target="_blank"
-                  rel="noreferrer nofollow"
-                  href="https://lk.linkedin.com/in/balathanusan-jeyarasan-99016117b"
-                  class="socialIcon"
-                >
-                  <img src="images/logo-linkedin.svg" alt="logo-linkedin" />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer nofollow"
-                  href="https://github.com/Balathanusan"
-                  class="socialIcon"
-                >
-                  <img src="images/logo-github.svg" alt="logo-github" />
-                </a>
-                <!-- <a
-                  target="_blank"
-                  rel="noreferrer nofollow"
-                  href="https://twitter.com/Thanusan_J?t=fXmB9mVdZliMRyd8TYG4dg&s=09"
-                  class="socialIcon"
-                >
-                  <img src="images/logo-twitter.svg" alt="logo-twitter" />
-                </a> -->
-              </div>
-              <div class="custom-btn-group mt-4">
-                <a href="mailto:iamthanusan@gmail.com" class="socialIcon">
-                  <img src="images/mail-outline.svg" alt="logo-mail" />
-                  <span>iamthanusan@gmail.com</span>
-                </a>
-              </div>
-            </div>
-          </div>
+      const docRef = await addDoc(collection(db, "Views"), {
+        platform: window.navigator.platform,
+        vendor: window.navigator.vendor,
+        language: window.navigator.language,
+        screen: `${window.screen.availWidth}px * ${window.screen.availHeight}px`,
+        timestamp: serverTimestamp(),
+      });
 
-          <div class="col-lg-5 col-md-12 col-12">
-            <div class="about-image svg">
-              <img src="images/profile.png" class="img-fluid" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section
-      class="resume py-5 d-lg-flex justify-content-center align-items-center"
-      id="skills"
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-12">
-            <h2 class="mb-4">Skills / Knowledge</h2>
-
-            <div class="timeline">
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3>
-                    <span>HTML</span>
-                  </h3>
-                  <p>Have enough HTML Knowledge to make a website.</p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>CSS</span></h3>
-                  <p>
-                    Prefer developing websites using vanilla CSS over UI
-                    frameworks.
-                  </p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>Scss / Saas</span></h3>
-                  <p>Like using scss.</p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>Javascript</span></h3>
-                  <p>From Vanilla JS to ES6 and <span>jQuery</span>.</p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>Vuejs</span></h3>
-                  <p>The first JS framework i've learned.</p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>Nuxtjs</span></h3>
-                  <p>It makes things easier.</p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>Angular</span></h3>
-                  <p>The second JS framework I've learned.</p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>React / ReactNative</span></h3>
-                  <p>
-                    Basic knowledge in React. Personally experimented voice
-                    calling app using Web-RTC in React-native.
-                  </p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>Ionic</span></h3>
-                  <p>Used for hybrid Mobile App with Angular.</p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>Nodejs</span></h3>
-                  <p>
-                    Using to make local tasks easier using scripts. Experimented
-                    <span>ExpressJS</span>, authentication, and more.
-                  </p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>GIT</span></h3>
-                  <p>Using Github, Bitbucket, Source-tree, Jira, and more.</p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>Photoshop</span></h3>
-                  <p>
-                    Using for creating and editing logos, icons, banners,
-                    brochurs, documents etc.
-                  </p>
-                </div>
-              </div>
-
-              <div class="timeline-wrapper">
-                <div class="timeline-yr">
-                  <span></span>
-                </div>
-                <div class="timeline-info">
-                  <h3><span>Other interested Techs</span></h3>
-                  <p>
-                    <span>Learning/Intrested* - </span>Python/Django, Figma, Sql/MongoDB,
-                    GraphQL, GSAP, ThreeJS, React/ReactNative, Cloud/DevOps
-                  </p>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORKS -->
-    <section class="py-5" id="projects">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-12">
-            <div class="text-center">
-              <h2 class="mb-4">Works</h2>
-            </div>
-            <div class="projectList">
-              <div class="section">
-                <div class="secTitle">
-                  <h5>
-                    Guider Labs India Pvt Ltd.
-                    <span>(Mar 2022 - Mar 2023)</span>
-                  </h5>
-                </div>
-                <div class="row items">
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/trainn-website.png" />
-                      </div>
-                      <div class="title">Trainn - Website</div>
-                      <div class="info">
-                        <div>Vuejs | Nuxtjs | Scss | Ghost CMS</div>
-                        <div class="status green">Live</div>
-                        <ul>
-                          <li class="elapsed" id="1665547810000"></li>
-                          <li>Role: Front-End Engineer</li>
-                          <li>Website of the Trainn software</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://trainn.co/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/trainn-webapp.png" />
-                      </div>
-                      <div class="title">Trainn - WebApp</div>
-                      <div class="info">
-                        <div>Vuejs | Scss</div>
-                        <div class="status green">Live</div>
-                        <ul>
-                          <li class="elapsed" id="1665547810000"></li>
-                          <li>Role: Front-End Engineer</li>
-                          <li>
-                            Users can create or edit videos of their product and
-                            share it with their customers
-                          </li>
-                          <li>
-                            This app has features such as screen recording,
-                            video editing, video effects etc
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://app.trainn.co/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/trainn-assignment.png" />
-                      </div>
-                      <div class="title">Assignment</div>
-                      <div class="info">
-                        <div>Vuejs | Scss</div>
-                        <!-- <div class="status green">Live</div> -->
-                        <ul>
-                          <li class="elapsed" id="1625547810000"></li>
-                          <li>Role: Front-End Developer</li>
-                          <li>
-                            A files and folder management app like Google Drive
-                            as an Assignment.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://poetic-daifuku-99449b.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="section">
-                <div class="secTitle">
-                  <h5>
-                    Finoculus Software India Pvt Ltd.
-                    <span>(Feb 2019 - Feb 2022)</span>
-                  </h5>
-                </div>
-                <div class="row items">
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/app.png" />
-                      </div>
-                      <div class="title">Skooly mobile app</div>
-                      <div class="info">
-                        <div>Ionic | Angular | Scss</div>
-                        <div class="status green">Live</div>
-                        <ul>
-                          <li class="elapsed" id="1625547810000"></li>
-                          <li>Role: Frontend developer, App Deployer</li>
-                          <li>Developed 35+ different screens.</li>
-                          <li>
-                            Responsible for App/Update deployment in Playstore
-                            and Appstore.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://play.google.com/store/apps/details?id=com.skooly.app"
-                          >View Android</a
-                        >
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://apps.apple.com/us/app/skooly-messenger-for-teachers/id1153385847"
-                          >View IOS</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/skooly1.png" />
-                      </div>
-                      <div class="title">Getskooly</div>
-                      <div class="info">
-                        <div>Html | Css | Js</div>
-                        <div class="status green">Live</div>
-                        <ul>
-                          <li class="elapsed" id="1622955810000"></li>
-                          <li>Role: Frontend developer</li>
-                          <li>Developed all the pages in this site.</li>
-                          <li>Used Eleventy, static site generator.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://getskooly.com/schools/en/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/skooly2.png" />
-                      </div>
-                      <div class="title">Skooly marketplace</div>
-                      <div class="info">
-                        <div>Angular | Scss</div>
-                        <div class="status green">Live</div>
-                        <ul>
-                          <li class="elapsed" id="1622955810000"></li>
-                          <li>Role: Frontend developer</li>
-                          <li>
-                            Developed authentication, quickChat, dashboard, and
-                            other UI's for school/academy management web app.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://getskooly.com/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/online-schools.png" />
-                      </div>
-                      <div class="title">Online schools</div>
-                      <div class="info">
-                        <div class="tech">Vuejs 2 | Scss</div>
-                        <div class="status green">Live</div>
-                        <ul>
-                          <li class="elapsed" id="1607231010000"></li>
-                          <li>Role: Frontend developer</li>
-                          <li>
-                            Developed UI for a web app where users can list
-                            their courses and schedules.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://getskooly.com/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/xv-admin.png" />
-                      </div>
-                      <div class="title">Admin dashboard</div>
-                      <div class="info">
-                        <div class="tech">Vuejs 2 | Scss</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1607231010000"></li>
-                          <li>Role: Frontend developer</li>
-                          <li>
-                            Designed/Developed a platform where admin can
-                            monitor the building during pandemic time.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://xv-admin-gracious-cray-c760c5.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/xv.png" />
-                      </div>
-                      <div class="title">Landing page</div>
-                      <div class="info">
-                        <div class="tech">Html | Css | Js</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1607231010000"></li>
-                          <li>Role: Frontend developer</li>
-                          <li>
-                            Designed/developed a landing page for my friend.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://mystifying-bardeen-970f17.netlify.app"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/form-admin.png" />
-                      </div>
-                      <div class="title">Form builder</div>
-                      <div class="info">
-                        <div class="tech">Vuejs 2 | Scss</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1607231010000"></li>
-                          <li>Role: Front-End developer</li>
-                          <li>
-                            Platform where users can create html forms using
-                            drag and drop function.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://form-creator-zealous-meninsky-54ec22.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/finoculus-assignment.png" />
-                      </div>
-                      <div class="title">Assignment</div>
-                      <div class="info">
-                        <div class="tech">Html | Css | Js</div>
-                        <ul>
-                          <li class="elapsed" id="1607231010000"></li>
-                          <li>Role: Developer</li>
-                          <li>Landing page as an Assignment for Finoculus.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://peppy-cendol-81ca4a.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="section">
-                <div class="secTitle">
-                  <h5>Freelance</h5>
-                </div>
-                <div class="row items">
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/svs.png" />
-                      </div>
-                      <div class="title">Sri Venkateswara Company</div>
-                      <div class="info">
-                        <div class="tech">
-                          Html | Css | Js | Jquery | Bootstrap
-                        </div>
-                        <div class="status green">Live</div>
-                        <ul>
-                          <li class="elapsed" id="1633965810000"></li>
-                          <li>Role: Front-End developer</li>
-                          <li>Developed a landing page for my client.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://www.srivenkateswaracompany.com/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/smss.png" />
-                      </div>
-                      <div class="title">RMS Logistics</div>
-                      <div class="info">
-                        <div class="tech">
-                          Html | Css | Js | Jquery | Bootstrap
-                        </div>
-                        <div class="status green">Live</div>
-                        <ul>
-                          <li class="elapsed" id="1622955810000"></li>
-                          <li>Role: Front-End developer, Deployer</li>
-                          <li>Developed a landing page for my client.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://rms-logistics.in/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/tias.png" />
-                      </div>
-                      <div class="title">Tiasenergy</div>
-                      <div class="info">
-                        <div class="tech">Html | Css | Js | Jquery</div>
-                        <div class="status green">Live</div>
-                        <ul>
-                          <li class="elapsed" id="1573016610000"></li>
-                          <li>Role: Front-End developer, Deployer</li>
-                          <li>Developed a landing page for my client.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://www.tiasenergy.com/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="section">
-                <div class="secTitle">
-                  <h5>Collabrations with friends</h5>
-                </div>
-                <div class="row items">
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/gpttutorials.png" />
-                      </div>
-                      <div class="title">GPT tutorials</div>
-                      <div class="info">
-                        <div class="tech">Vue | Nuxt | Scss</div>
-                        <div class="status green">In Development</div>
-                        <ul>
-                          <!-- <li class="elapsed" id="1701999999999"></li> -->
-                          <li>Role: Fullstack developer</li>
-                          <li>
-                            Developed a website where users can see reviews and
-                            usecases of GPT softwares.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://gpttutorials.io/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/stackai.png" />
-                      </div>
-                      <div class="title">StackAI</div>
-                      <div class="info">
-                        <div class="tech">Vue | Nuxt | Scss</div>
-                        <div class="status green">In Development</div>
-                        <ul>
-                          <!-- <li class="elapsed" id="1701999999999"></li> -->
-                          <li>Role: Fullstack developer</li>
-                          <li>
-                            Developed a website where users can see reviews of
-                            AI apps.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://stackai.co/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="section">
-                <div class="secTitle">
-                  <h5>Personal</h5>
-                </div>
-                <div class="row items">
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/findsnippets.png" />
-                      </div>
-                      <div class="title">Findsnippets</div>
-                      <div class="info">
-                        <div class="tech">Nuxtjs | Scss</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1669751400000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            Platform where users can search and see Programming
-                            code snippets.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://deft-bavarois-3cda74.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/watch-trailers.png" />
-                      </div>
-                      <div class="title">Watch Trailers</div>
-                      <div class="info">
-                        <div class="tech">Nuxtjs | Scss</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1648751400000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            Developed a website where users can watch latest
-                            trailers.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://watch-trailers.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/uisnip.png" />
-                      </div>
-                      <div class="title">Uisnip</div>
-                      <div class="info">
-                        <div class="tech">Nuxtjs | Scss</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1636175010000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            Developed a website where I can post UI code
-                            snippets with preview.
-                          </li>
-                          <li>Idea from codepen website.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://uisnip.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/templatezip.png" />
-                      </div>
-                      <div class="title">Templatezip</div>
-                      <div class="info">
-                        <div class="tech">
-                          Nuxtjs | Scss | Firebase | Stripe
-                        </div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1580533410000"></li>
-                          <li>Role: Everything</li>
-                          <li>Platform to sell Website/Ionic templates.</li>
-                          <li>Integrated with 'Stripe' for payments.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://templatezip-6c163f-1997-09-11-master-test-v1.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/webdevfix.png" />
-                      </div>
-                      <div class="title">Webdevfix</div>
-                      <div class="info">
-                        <div class="tech">Nuxtjs | Scss</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1612587810000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            Blogging site where I used to post articles related
-                            to web development.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://regal-sunflower-1eb4ea.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/webdevfix-v2.png" />
-                      </div>
-                      <div class="title">Webdevfix V2</div>
-                      <div class="info">
-                        <div class="tech">Nuxtjs | Scss</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1612587810000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            Blogging site where I used to post articles related
-                            to web development.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://luxury-douhua-ff4b5c.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/easy-recipes.png" />
-                      </div>
-                      <div class="title">Easy Recipes</div>
-                      <div class="info">
-                        <div class="tech">Angular | Scss</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1580533410000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            Platform where users can view and add Food Recipes.
-                          </li>
-                          <li>Experimental/Unfinished project.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://ubiquitous-sprinkles-8ebcd3.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/web-builder.png" />
-                      </div>
-                      <div class="title">Website builder</div>
-                      <div class="info">
-                        <div class="tech">Vuejs 3 | Scss</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1580533410000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            Platform where users can create webpages using drag
-                            and drop method.
-                          </li>
-                          <li>Experimental project.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://angry-albattani-0b857d.netlify.app"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/js-ref.png" />
-                      </div>
-                      <div class="title">Programming reference</div>
-                      <div class="info">
-                        <div class="tech">Html | css | Js</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1580533410000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            Cheatsheet that I used to have a quick look at
-                            syntaxes.
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://jsref-cocky-spence-0b6696.netlify.app/js_ref"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/board.png" />
-                      </div>
-                      <div class="title">Drawing board</div>
-                      <div class="info">
-                        <div class="tech">
-                          Html | css | Js | External library
-                        </div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1580533410000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            A drawing board where user can use mouse to draw on
-                            the screen.
-                          </li>
-                          <li>Experimental project.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://friendly-mayer-211aa3.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/fallinfo.png" />
-                      </div>
-                      <div class="title">Fallinfo - A blogging site</div>
-                      <div class="info">
-                        <div class="tech">Html | css | Js | Jquery</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1548997410000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            A blogging website i've developed to post articles
-                            about development.
-                          </li>
-                          <li>Experimental project.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://naughty-montalcini-80b80f.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/fallinfo-2.png" />
-                      </div>
-                      <div class="title">Fallinfo 2 - A blogging site</div>
-                      <div class="info">
-                        <div class="tech">Html | css | Js | Jquery</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1548997410000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            A blogging website i've developed to post articles
-                            about development.
-                          </li>
-                          <li>Experimental project.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://upbeat-ritchie-7dac35.netlify.app"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/html-table.png" />
-                      </div>
-                      <div class="title">Html table generator</div>
-                      <div class="info">
-                        <div class="tech">Vuejs 2 | Scss</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1548997410000"></li>
-                          <li>Role: Everything</li>
-                          <li>
-                            Website where users can generate large sets of HTML
-                            table with GUI.
-                          </li>
-                          <li>Experimental project.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://hungry-brahmagupta-7056b6.netlify.app/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item col-12 col-lg-4 col-md-6">
-                    <div class="wrapper">
-                      <div class="cover">
-                        <img src="images/projects/youvsbot.png" />
-                      </div>
-                      <div class="title">YouVsBot</div>
-                      <div class="info">
-                        <div class="tech">Vuejs 2 | Scss</div>
-                        <div class="status red">Discontinued</div>
-                        <ul>
-                          <li class="elapsed" id="1548997410000"></li>
-                          <li>Role: Everything</li>
-                          <li>Simple gaming webapp with 4 different games.</li>
-                          <li>Learning/Experimental project.</li>
-                        </ul>
-                      </div>
-                      <div class="action">
-                        <a
-                          target="_blank"
-                          rel="noreferrer nofollow"
-                          class="viewLink"
-                          href="https://zen-pike-e7a567.netlify.app/#/"
-                          >View site</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="secSubtitle">
-                  <p>
-                    "In the realm of creativity, every abandoned project is a
-                    stepping stone to mastery."
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HIGHLIGHTS -->
-    <section class="project py-5" id="highlights">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-11 text-center mx-auto col-12">
-            <div class="col-lg-8 mx-auto">
-              <h2>
-                Some of the user interfaces <br />
-                I have designed and/or developed.
-              </h2>
-              <p class="small">
-                Everything listed below is Copyrighted by respective Owners.
-              </p>
-            </div>
-
-            <div class="owl-carousel owl-theme">
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl18.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl2.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl3.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl4.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl5.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl6.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl7.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl8.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl9.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl10.png" class="img-fluid" />
-                </div>
-              </div>
-              <!-- <div class="item">
-                    <div class="project-info">
-                      <img src="images/highlights/pl11.png" class="img-fluid" />
-                    </div>
-                  </div> -->
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl12.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl13.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl14.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl15.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl16.png" class="img-fluid" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/highlights/pl1.png" class="img-fluid" />
-                </div>
-              </div>
-              <!-- <div class="item">
-                    <div class="project-info">
-                      <img src="images/highlights/pl17.png" class="img-fluid" />
-                    </div>
-                  </div> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact py-5" id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 mr-lg-5 col-12">
-            <h2 class="mb-4">
-              Anything else? <br />
-              Let's talk
-            </h2>
-            <p>
-              Send me an E-mail:
-              <a href="mailto:iamthanusan@gmail.com">iamthanusan@gmail.com</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-12">
-            <p class="copyright-text text-center">
-              &copy; <span id="currentYear"></span>
-              <a href="/">balathanusan.github.io</a>. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Headroom.js"></script>
-    <script src="js/jQuery.headroom.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
+      window._fb = {
+        db,
+        docRef,
+        doc,
+        updateDoc,
+        arrayUnion,
+        serverTimestamp,
+      };
+    </script>
+    <script src="app.js"></script>
   </body>
-  
-  <!-- Google Firebase -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-    import {
-      getFirestore,
-      collection,
-      doc,
-      addDoc,
-      updateDoc,
-      arrayUnion,
-      serverTimestamp,
-    } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
-    const firebaseConfig = {
-      apiKey: "AIzaSyCPMTMNBBFi13ZjAsJ4WpXZH-xS9ht15vI",
-      authDomain: "portfolio-1f7d2.firebaseapp.com",
-      projectId: "portfolio-1f7d2",
-      storageBucket: "portfolio-1f7d2.appspot.com",
-      messagingSenderId: "631767602765",
-      appId: "1:631767602765:web:b61f898e8bf5bf6b036e04",
-    };
-    const app = initializeApp(firebaseConfig);
-
-    const db = getFirestore(app);
-
-    const docRef = await addDoc(collection(db, "Views"), {
-      platform: window.navigator.platform,
-      vendor: window.navigator.vendor,
-      language: window.navigator.language,
-      screen: `${window.screen.availWidth}px * ${window.screen.availHeight}px`,
-      timestamp: serverTimestamp(),
-    });
-
-    const links = document.querySelectorAll(".viewLink");
-
-    for (let i = 0; i < links.length; i++) {
-      links[i].addEventListener("click", () => {
-        const title = links[i].parentNode.parentNode.childNodes[3].textContent;
-        updateClick(title);
-      });
-    }
-
-    async function updateClick(title) {
-      await updateDoc(doc(db, "Views", docRef.id), {
-        clicks: arrayUnion(title),
-      });
-    }
-  </script>
 </html>
