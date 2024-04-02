@@ -7,6 +7,10 @@ var bgPrimary = "bg-[#000]";
 var bgSecondary = "bg-[#16191e]";
 var bgShadow = "shadow-[inset_0_1px_0px_0px_rgba(255,255,255,0.06)]";
 
+var myEmail = "iamthanusan@gmail.com";
+var myLinkedIn = "https://lk.linkedin.com/in/balathanusan-jeyarasan-99016117b";
+var myGitHub = "https://github.com/Balathanusan";
+
 var skills = [{
   name: "Html",
   icon: "html.svg"
@@ -453,9 +457,11 @@ function Header(props) {
 }
 
 function Hero(props) {
-  var linkedIn = "https://lk.linkedin.com/in/balathanusan-jeyarasan-99016117b";
-  var gitHub = "https://github.com/Balathanusan";
-  var email = "iamthanusan@gmail.com";
+  function viewed(site) {
+    window._fb.updateDoc(window._fb.doc(window._fb.db, "Views", window._fb.docRef.id), {
+      viewed: window._fb.arrayUnion(site)
+    });
+  }
   return React.createElement(
     "div",
     { className: "max-w-7xl mx-auto px-6 md:px-12 py-28 flex flex-col sm:flex-row gap-3 md:gap-6" },
@@ -485,17 +491,37 @@ function Hero(props) {
           { className: "mt-8 flex gap-4 items-center" },
           React.createElement(
             "a",
-            { className: "transition-transform hover:scale-125", href: gitHub },
+            {
+              onClick: function onClick() {
+                return viewed("Email");
+              },
+              className: "transition-transform hover:scale-125",
+              href: "mailto:" + myEmail
+            },
             React.createElement("img", { className: "w-6", src: "./assets/icons/mail-outline.svg" })
           ),
           React.createElement(
             "a",
-            { className: "transition-transform hover:scale-125", href: linkedIn },
+            {
+              onClick: function onClick() {
+                return viewed("LinkedIn");
+              },
+              className: "transition-transform hover:scale-125",
+              target: "_blank",
+              href: myLinkedIn
+            },
             React.createElement("img", { className: "w-6", src: "./assets/icons/logo-linkedin.svg" })
           ),
           React.createElement(
             "a",
-            { className: "transition-transform hover:scale-125", href: gitHub },
+            {
+              onClick: function onClick() {
+                return viewed("Github");
+              },
+              className: "transition-transform hover:scale-125",
+              target: "_blank",
+              href: myGitHub
+            },
             React.createElement("img", { className: "w-6", src: "./assets/icons/logo-github.svg" })
           )
         )
@@ -764,7 +790,7 @@ function Contact(props) {
     });
   }
 
-  function submit(name) {
+  function submit() {
     if (submitting) {
       return;
     }
@@ -822,7 +848,16 @@ function Contact(props) {
       React.createElement(
         "span",
         { className: "text-white/50" },
-        "Reach out via Email: iamthanusan@gmail.com"
+        "Reach out via Email:",
+        " ",
+        React.createElement(
+          "a",
+          {
+            href: "mailto:" + myEmail,
+            className: "transition-colors hover:text-white/80"
+          },
+          myEmail
+        )
       )
     ),
     React.createElement(
@@ -918,6 +953,8 @@ function Footer(props) {
 }
 
 function App() {
+  console.log("%cI'm not a great programmer; I'm just a good programmer with great habits (of Googling).", ["font-size: 12px", "font-family: monospace", "background: #00f9d0", "display: inline-block", "color: black", "padding: 8px 20px", "margin: 8px 19px", "border: 1px dashed;"].join(";"));
+
   return React.createElement(
     "div",
     { className: bgPrimary + " text-white" },

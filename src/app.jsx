@@ -5,6 +5,11 @@ const bgPrimary = "bg-[#000]";
 const bgSecondary = "bg-[#16191e]";
 const bgShadow = "shadow-[inset_0_1px_0px_0px_rgba(255,255,255,0.06)]";
 
+const myEmail = "iamthanusan@gmail.com";
+const myLinkedIn =
+  "https://lk.linkedin.com/in/balathanusan-jeyarasan-99016117b";
+const myGitHub = "https://github.com/Balathanusan";
+
 const skills = [
   {
     name: "Html",
@@ -546,10 +551,14 @@ function Header(props) {
 }
 
 function Hero(props) {
-  const linkedIn =
-    "https://lk.linkedin.com/in/balathanusan-jeyarasan-99016117b";
-  const gitHub = "https://github.com/Balathanusan";
-  const email = "iamthanusan@gmail.com";
+  function viewed(site) {
+    window._fb.updateDoc(
+      window._fb.doc(window._fb.db, "Views", window._fb.docRef.id),
+      {
+        viewed: window._fb.arrayUnion(site),
+      }
+    );
+  }
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-12 py-28 flex flex-col sm:flex-row gap-3 md:gap-6">
       <div className="flex-1 flex items-center">
@@ -565,13 +574,27 @@ function Hero(props) {
             crafting modern, dynamic and responsive user interfaces.
           </p>
           <div className="mt-8 flex gap-4 items-center">
-            <a className="transition-transform hover:scale-125" href={gitHub}>
+            <a
+              onClick={() => viewed("Email")}
+              className="transition-transform hover:scale-125"
+              href={"mailto:" + myEmail}
+            >
               <img className="w-6" src="./assets/icons/mail-outline.svg" />
             </a>
-            <a className="transition-transform hover:scale-125" href={linkedIn}>
+            <a
+              onClick={() => viewed("LinkedIn")}
+              className="transition-transform hover:scale-125"
+              target="_blank"
+              href={myLinkedIn}
+            >
               <img className="w-6" src="./assets/icons/logo-linkedin.svg" />
             </a>
-            <a className="transition-transform hover:scale-125" href={gitHub}>
+            <a
+              onClick={() => viewed("Github")}
+              className="transition-transform hover:scale-125"
+              target="_blank"
+              href={myGitHub}
+            >
               <img className="w-6" src="./assets/icons/logo-github.svg" />
             </a>
           </div>
@@ -777,7 +800,7 @@ function Contact(props) {
     });
   }
 
-  function submit(name) {
+  function submit() {
     if (submitting) {
       return;
     }
@@ -829,7 +852,13 @@ function Contact(props) {
           Anything else? <br /> Let's talk
         </div>
         <span className="text-white/50">
-          Reach out via Email: iamthanusan@gmail.com
+          Reach out via Email:{" "}
+          <a
+            href={"mailto:" + myEmail}
+            className="transition-colors hover:text-white/80"
+          >
+            {myEmail}
+          </a>
         </span>
       </div>
       <div className="felx flex-col flex-1 space-y-2 mt-10">
@@ -902,6 +931,20 @@ function Footer(props) {
 }
 
 function App() {
+  console.log(
+    "%cI'm not a great programmer; I'm just a good programmer with great habits (of Googling).",
+    [
+      "font-size: 12px",
+      "font-family: monospace",
+      "background: #00f9d0",
+      "display: inline-block",
+      "color: black",
+      "padding: 8px 20px",
+      "margin: 8px 19px",
+      "border: 1px dashed;",
+    ].join(";")
+  );
+
   return (
     <div className={`${bgPrimary} text-white`}>
       <Header></Header>

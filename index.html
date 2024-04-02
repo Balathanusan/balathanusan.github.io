@@ -134,35 +134,36 @@
         arrayUnion,
         serverTimestamp,
       } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
+      if (window.location.hash != "#admin") {
+        const firebaseConfig = {
+          apiKey: "AIzaSyCPMTMNBBFi13ZjAsJ4WpXZH-xS9ht15vI",
+          authDomain: "portfolio-1f7d2.firebaseapp.com",
+          projectId: "portfolio-1f7d2",
+          storageBucket: "portfolio-1f7d2.appspot.com",
+          messagingSenderId: "631767602765",
+          appId: "1:631767602765:web:b61f898e8bf5bf6b036e04",
+        };
+        const app = initializeApp(firebaseConfig);
 
-      const firebaseConfig = {
-        apiKey: "AIzaSyCPMTMNBBFi13ZjAsJ4WpXZH-xS9ht15vI",
-        authDomain: "portfolio-1f7d2.firebaseapp.com",
-        projectId: "portfolio-1f7d2",
-        storageBucket: "portfolio-1f7d2.appspot.com",
-        messagingSenderId: "631767602765",
-        appId: "1:631767602765:web:b61f898e8bf5bf6b036e04",
-      };
-      const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
-      const db = getFirestore(app);
+        const docRef = await addDoc(collection(db, "Views"), {
+          platform: window.navigator.platform,
+          vendor: window.navigator.vendor,
+          language: window.navigator.language,
+          screen: `${window.screen.availWidth}px * ${window.screen.availHeight}px`,
+          timestamp: serverTimestamp(),
+        });
 
-      const docRef = await addDoc(collection(db, "Views"), {
-        platform: window.navigator.platform,
-        vendor: window.navigator.vendor,
-        language: window.navigator.language,
-        screen: `${window.screen.availWidth}px * ${window.screen.availHeight}px`,
-        timestamp: serverTimestamp(),
-      });
-
-      window._fb = {
-        db,
-        docRef,
-        doc,
-        updateDoc,
-        arrayUnion,
-        serverTimestamp,
-      };
+        window._fb = {
+          db,
+          docRef,
+          doc,
+          updateDoc,
+          arrayUnion,
+          serverTimestamp,
+        };
+      }
     </script>
     <script src="app.js"></script>
   </body>
