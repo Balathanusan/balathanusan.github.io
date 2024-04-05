@@ -511,11 +511,11 @@ function Header(props) {
   }
   return (
     <div
-      className={`max-w-screen-2xl sticky z-50 top-0 transition-all duration-300 
+      className={`max-w-screen-2xl mx-auto sticky z-50 top-0 transition-all duration-300 
       ${showBg ? bgSecondary : null} 
       ${!show ? "opacity-0 -translate-y-4" : null}`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-3 text-center md:justify-between md:flex">
+      <div className="mx-auto px-6 md:px-12 py-3 text-center md:justify-between md:flex">
         <div className="font-semibold text-white text-xl cursor-default mb-3 md:mb-0 ">
           Balathanusan Jeyarasan
         </div>
