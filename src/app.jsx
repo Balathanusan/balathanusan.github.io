@@ -185,7 +185,7 @@ const projects = [
         name: "Namespace Labs",
         technologies: "React | NextJs | Typescript | Tailwind",
         image: "namespace.png",
-        link: "https://www.namespace.so/",
+        link: "https://www.namespace.so/pricing",
         description: "Revamped the pricing page of their marketing site.",
       },
       {
