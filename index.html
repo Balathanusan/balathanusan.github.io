@@ -134,7 +134,10 @@
         arrayUnion,
         serverTimestamp,
       } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
-      if (window.location.hash != "#admin") {
+      if (
+        window.location.hostname == "balathanusan.github.io" &&
+        window.location.hash != "#admin"
+      ) {
         const firebaseConfig = {
           apiKey: "AIzaSyCPMTMNBBFi13ZjAsJ4WpXZH-xS9ht15vI",
           authDomain: "portfolio-1f7d2.firebaseapp.com",

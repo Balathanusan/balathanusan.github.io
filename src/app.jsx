@@ -57,6 +57,14 @@ const skills = [
     icon: "angular.svg",
   },
   {
+    name: "Firebase",
+    icon: "firebase.svg",
+  },
+  {
+    name: "JQuery",
+    icon: "jQuery.svg",
+  },
+  {
     name: "NodeJs",
     icon: "nodejs.svg",
   },
@@ -80,6 +88,19 @@ const skills = [
 ];
 
 const projects = [
+  {
+    title: "Namespace Labs Inc",
+    period: "Mar 2024 - Mar 2024",
+    items: [
+      {
+        name: "Pricing page",
+        technologies: "React | NextJs | Typescript | Tailwind",
+        image: "namespace.png",
+        link: "https://www.namespace.so/pricing",
+        description: "Revamped the pricing page of their marketing site.",
+      },
+    ],
+  },
   {
     title: "Guider Labs India Pvt Ltd.",
     period: "Mar 2022 - Mar 2023",
@@ -182,11 +203,11 @@ const projects = [
     title: "Freelance",
     items: [
       {
-        name: "Namespace Labs",
-        technologies: "React | NextJs | Typescript | Tailwind",
-        image: "namespace.png",
-        link: "https://www.namespace.so/pricing",
-        description: "Revamped the pricing page of their marketing site.",
+        name: "Tiasenergy",
+        technologies: "Html | Css | JavaScript | jQuery",
+        image: "tias.png",
+        link: "https://www.tiasenergy.com/",
+        description: "Developed a landing page for your client.",
       },
       {
         name: "Sri Venkateswara Company",
@@ -201,13 +222,6 @@ const projects = [
         image: "smss.png",
         link: "https://rms-logistics.in/",
         description: "Developed a landing page for a client.",
-      },
-      {
-        name: "Tiasenergy",
-        technologies: "Html | Css | JavaScript | jQuery",
-        image: "tias.png",
-        link: "https://www.tiasenergy.com/",
-        description: "Developed a landing page for your client.",
       },
     ],
   },
@@ -380,6 +394,9 @@ const highlights = [
       image: "pl6.png",
     },
     {
+      image: "pl19.png",
+    },
+    {
       image: "pl9.png",
     },
     {
@@ -398,6 +415,9 @@ const highlights = [
     },
     {
       image: "pl7.png",
+    },
+    {
+      image: "pl20.png",
     },
     {
       image: "pl17.png",
@@ -442,6 +462,9 @@ const highlights = [
     },
     {
       image: "pl14.png",
+    },
+    {
+      image: "pl21.png",
     },
     {
       image: "pl16.png",
