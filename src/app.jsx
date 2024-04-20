@@ -62,7 +62,7 @@ const skills = [
   },
   {
     name: "JQuery",
-    icon: "jQuery.svg",
+    icon: "jquery.svg",
   },
   {
     name: "NodeJs",
@@ -590,7 +590,7 @@ function Hero(props) {
             Hi, I'm Thanusan
           </div>
           <div className="font-bold text-3xl md:text-5xl mt-2">
-            Frontend Developer
+            Software Developer
           </div>
           <p className="text-white/80 md:text-lg font-medium max-w-lg mt-2">
             A passionate Engineer with 4+ years of professional experience
@@ -920,6 +920,16 @@ function Contact(props) {
           </span>
         </div>
         <div className="flex justify-between items-center">
+          <div>
+            {submitSuccess ? (
+              <span className={`${textTheme}`}>
+                Thank you. Message received.
+              </span>
+            ) : null}
+            {submitError ? (
+              <span className={`text-red-700`}>Something went wrong.</span>
+            ) : null}
+          </div>
           <button
             onClick={submit}
             className={`rounded-md py-3 px-10 text-white/50 transition-colors hover:text-white ${bgSecondary} disabled:opacity-50`}
@@ -927,12 +937,6 @@ function Contact(props) {
           >
             Send
           </button>
-          {submitSuccess ? (
-            <span className={`${textTheme}`}>Thank you. Message received.</span>
-          ) : null}
-          {submitError ? (
-            <span className={`text-red-700`}>Something went wrong.</span>
-          ) : null}
         </div>
       </div>
     </div>

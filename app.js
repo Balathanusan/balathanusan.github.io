@@ -50,7 +50,7 @@ var skills = [{
   icon: "firebase.svg"
 }, {
   name: "JQuery",
-  icon: "jQuery.svg"
+  icon: "jquery.svg"
 }, {
   name: "NodeJs",
   icon: "nodejs.svg"
@@ -495,7 +495,7 @@ function Hero(props) {
         React.createElement(
           "div",
           { className: "font-bold text-3xl md:text-5xl mt-2" },
-          "Frontend Developer"
+          "Software Developer"
         ),
         React.createElement(
           "p",
@@ -921,6 +921,20 @@ function Contact(props) {
         "div",
         { className: "flex justify-between items-center" },
         React.createElement(
+          "div",
+          null,
+          submitSuccess ? React.createElement(
+            "span",
+            { className: "" + textTheme },
+            "Thank you. Message received."
+          ) : null,
+          submitError ? React.createElement(
+            "span",
+            { className: "text-red-700" },
+            "Something went wrong."
+          ) : null
+        ),
+        React.createElement(
           "button",
           {
             onClick: submit,
@@ -928,17 +942,7 @@ function Contact(props) {
             disabled: submitting
           },
           "Send"
-        ),
-        submitSuccess ? React.createElement(
-          "span",
-          { className: "" + textTheme },
-          "Thank you. Message received."
-        ) : null,
-        submitError ? React.createElement(
-          "span",
-          { className: "text-red-700" },
-          "Something went wrong."
-        ) : null
+        )
       )
     )
   );
