@@ -293,77 +293,81 @@ var projects = [{
 }];
 
 var highlights = [[{
-  image: "pl2.png"
+  image: "pl30.png"
 }, {
-  image: "pl3.png"
+  image: "pl16.png"
 }, {
-  image: "pl4.png"
+  image: "pl21.png"
 }, {
-  image: "pl1.png"
+  image: "pl35.png"
 }, {
-  image: "pl7.png"
+  image: "pl25.png"
 }, {
-  image: "pl5.png"
-}, {
-  image: "pl8.png"
-}, {
-  image: "pl11.png"
+  image: "pl29.png"
 }, {
   image: "pl6.png"
 }, {
-  image: "pl19.png"
+  image: "pl32.png"
 }, {
-  image: "pl9.png"
-}, {
-  image: "pl10.png"
-}], [{
-  image: "pl3.png"
-}, {
-  image: "pl18.png"
-}, {
-  image: "pl5.png"
-}, {
-  image: "pl7.png"
+  image: "pl38.png"
 }, {
   image: "pl20.png"
 }, {
   image: "pl17.png"
 }, {
+  image: "pl18.png"
+}, {
+  image: "pl14.png"
+}], [{
+  image: "pl19.png"
+}, {
+  image: "pl7.png"
+}, {
+  image: "pl5.png"
+}, {
+  image: "pl23.png"
+}, {
+  image: "pl37.png"
+}, {
+  image: "pl10.png"
+}, {
+  image: "pl3.png"
+}, {
+  image: "pl24.png"
+}, {
+  image: "pl33.png"
+}, {
+  image: "pl4.png"
+}, {
+  image: "pl13.png"
+}, {
+  image: "pl22.png"
+}, {
+  image: "pl15.png"
+}], [{
+  image: "pl11.png"
+}, {
+  image: "pl34.png"
+}, {
+  image: "pl26.png"
+}, {
+  image: "pl8.png"
+}, {
+  image: "pl28.png"
+}, {
+  image: "pl12.png"
+}, {
+  image: "pl31.png"
+}, {
+  image: "pl27.png"
+}, {
+  image: "pl2.png"
+}, {
   image: "pl9.png"
 }, {
   image: "pl1.png"
 }, {
-  image: "pl11.png"
-}, {
-  image: "pl16.png"
-}, {
-  image: "pl13.png"
-}, {
-  image: "pl15.png"
-}], [{
-  image: "pl8.png"
-}, {
-  image: "pl10.png"
-}, {
-  image: "pl15.png"
-}, {
-  image: "pl9.png"
-}, {
-  image: "pl11.png"
-}, {
-  image: "pl12.png"
-}, {
-  image: "pl14.png"
-}, {
-  image: "pl21.png"
-}, {
-  image: "pl16.png"
-}, {
-  image: "pl13.png"
-}, {
-  image: "pl18.png"
-}, {
-  image: "pl17.png"
+  image: "pl36.png"
 }]];
 
 var companies = [{
@@ -584,11 +588,11 @@ function Highlights(props) {
     "div",
     {
       id: "highlights",
-      className: "max-w-screen-2xl mx-auto overflow-hidden p-12"
+      className: "max-w-screen-2xl mx-auto overflow-hidden p-12 " + bgSecondary
     },
     React.createElement(
       "div",
-      { className: "font-bold text-center mb-8 text-2xl" },
+      { className: "font-bold text-center text-2xl" },
       "Highlights"
     ),
     highlights.map(function (group, index) {
@@ -602,14 +606,14 @@ function Highlights(props) {
           onMouseLeave: function onMouseLeave() {
             return resume(index);
           },
-          className: "marquee " + (index % 2 == 0 ? "left-to-right" : "right-to-left") + " " + (animationPause == index ? "pause" : null)
+          className: "marquee my-14 " + (index % 2 == 0 ? "left-to-right" : "right-to-left") + " " + (animationPause == index ? "pause" : null)
         },
         group.map(function (item) {
           return React.createElement(
             "div",
             { key: item.image },
             React.createElement("img", {
-              className: "min-w-48 max-w-48 sm:min-w-64 sm:max-w-64 md:min-w-96 md:max-w-96",
+              className: "min-w-48 max-w-48 sm:min-w-64 shadow-2xl sm:max-w-64 md:min-w-96 md:max-w-96 mx-8 my-6 rounded-md",
               src: "./assets/highlights/" + item.image
             })
           );
@@ -625,12 +629,12 @@ function Skills(props) {
     { id: "skills", className: "max-w-7xl mx-auto px-6 md:px-12 py-12" },
     React.createElement(
       "div",
-      { className: "font-bold text-center mb-8 text-2xl" },
+      { className: "font-bold text-center text-2xl" },
       "Technology Proficiency"
     ),
     React.createElement(
       "div",
-      { className: "flex gap-4 flex-wrap items-center justify-center" },
+      { className: "flex gap-4 flex-wrap items-center justify-center my-20" },
       skills.map(function (skill) {
         return React.createElement(
           "div",
