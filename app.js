@@ -619,7 +619,7 @@ function Highlights(props) {
           onMouseLeave: function onMouseLeave() {
             return resume(index);
           },
-          className: "marquee my-14 " + (index % 2 == 0 ? "left-to-right" : "right-to-left") + " " + (animationPause == index ? "pause" : null)
+          className: "marquee mt-14 " + (index % 2 == 0 ? "left-to-right" : "right-to-left") + " " + (animationPause == index ? "pause" : null)
         },
         group.map(function (item) {
           return React.createElement(
@@ -647,7 +647,7 @@ function Skills(props) {
     ),
     React.createElement(
       "div",
-      { className: "flex gap-4 flex-wrap items-center justify-center my-20" },
+      { className: "flex gap-4 flex-wrap items-center justify-center mt-20" },
       skills.map(function (skill) {
         return React.createElement(
           "div",

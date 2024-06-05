@@ -677,9 +677,9 @@ function Highlights(props) {
             key={"group" + index}
             onMouseEnter={() => pause(index)}
             onMouseLeave={() => resume(index)}
-            className={`marquee my-14 ${
+            className={`marquee mt-14 ${
               index % 2 == 0 ? "left-to-right" : "right-to-left"
-            } ${animationPause == index ? "pause" : null}`}
+            } ${animationPause == index ? "pause" : null}`} 
           >
             {group.map((item) => {
               return (
@@ -704,7 +704,7 @@ function Skills(props) {
       <div className="font-bold text-center text-2xl">
         Technology Proficiency
       </div>
-      <div className="flex gap-4 flex-wrap items-center justify-center my-20">
+      <div className="flex gap-4 flex-wrap items-center justify-center mt-20">
         {skills.map((skill) => {
           return (
             <div
