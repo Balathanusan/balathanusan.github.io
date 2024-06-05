@@ -10,6 +10,7 @@ var bgShadow = "shadow-[inset_0_1px_0px_0px_rgba(255,255,255,0.06)]";
 var myEmail = "iamthanusan@gmail.com";
 var myLinkedIn = "https://lk.linkedin.com/in/balathanusan-jeyarasan-99016117b";
 var myGitHub = "https://github.com/Balathanusan";
+var myTwitter = "https://x.com/Thanusan_J";
 
 var skills = [{
   name: "Html",
@@ -527,20 +528,9 @@ function Hero(props) {
             "a",
             {
               onClick: function onClick() {
-                return viewed("Email");
-              },
-              className: "transition-transform hover:scale-125",
-              href: "mailto:" + myEmail
-            },
-            React.createElement("img", { className: "w-6", src: "./assets/icons/mail-outline.svg" })
-          ),
-          React.createElement(
-            "a",
-            {
-              onClick: function onClick() {
                 return viewed("LinkedIn");
               },
-              className: "transition-transform hover:scale-125",
+              className: "transition-all opacity-70 hover:opacity-100 hover:scale-125",
               target: "_blank",
               href: myLinkedIn
             },
@@ -552,11 +542,34 @@ function Hero(props) {
               onClick: function onClick() {
                 return viewed("Github");
               },
-              className: "transition-transform hover:scale-125",
+              className: "transition-all opacity-70 hover:opacity-100 hover:scale-125",
               target: "_blank",
               href: myGitHub
             },
             React.createElement("img", { className: "w-6", src: "./assets/icons/logo-github.svg" })
+          ),
+          React.createElement(
+            "a",
+            {
+              onClick: function onClick() {
+                return viewed("Twitter");
+              },
+              className: "transition-all opacity-70 hover:opacity-100 hover:scale-125",
+              target: "_blank",
+              href: myTwitter
+            },
+            React.createElement("img", { className: "w-6", src: "./assets/icons/logo-twitter.svg" })
+          ),
+          React.createElement(
+            "a",
+            {
+              onClick: function onClick() {
+                return viewed("Email");
+              },
+              className: "transition-all opacity-70 hover:opacity-100 hover:scale-125",
+              href: "mailto:" + myEmail
+            },
+            React.createElement("img", { className: "w-6", src: "./assets/icons/mail.svg" })
           )
         )
       )

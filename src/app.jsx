@@ -9,6 +9,7 @@ const myEmail = "iamthanusan@gmail.com";
 const myLinkedIn =
   "https://lk.linkedin.com/in/balathanusan-jeyarasan-99016117b";
 const myGitHub = "https://github.com/Balathanusan";
+const myTwitter = "https://x.com/Thanusan_J";
 
 const skills = [
   {
@@ -612,15 +613,8 @@ function Hero(props) {
           </p>
           <div className="mt-8 flex gap-4 items-center">
             <a
-              onClick={() => viewed("Email")}
-              className="transition-transform hover:scale-125"
-              href={"mailto:" + myEmail}
-            >
-              <img className="w-6" src="./assets/icons/mail-outline.svg" />
-            </a>
-            <a
               onClick={() => viewed("LinkedIn")}
-              className="transition-transform hover:scale-125"
+              className="transition-all opacity-70 hover:opacity-100 hover:scale-125"
               target="_blank"
               href={myLinkedIn}
             >
@@ -628,11 +622,26 @@ function Hero(props) {
             </a>
             <a
               onClick={() => viewed("Github")}
-              className="transition-transform hover:scale-125"
+              className="transition-all opacity-70 hover:opacity-100 hover:scale-125"
               target="_blank"
               href={myGitHub}
             >
               <img className="w-6" src="./assets/icons/logo-github.svg" />
+            </a>
+            <a
+              onClick={() => viewed("Twitter")}
+              className="transition-all opacity-70 hover:opacity-100 hover:scale-125"
+              target="_blank"
+              href={myTwitter}
+            >
+              <img className="w-6" src="./assets/icons/logo-twitter.svg" />
+            </a>
+            <a
+              onClick={() => viewed("Email")}
+              className="transition-all opacity-70 hover:opacity-100 hover:scale-125"
+              href={"mailto:" + myEmail}
+            >
+              <img className="w-6" src="./assets/icons/mail.svg" />
             </a>
           </div>
         </div>

@@ -1046,6 +1046,14 @@ video {
   opacity: 0.5;
 }
 
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
 .shadow-\[inset_0_1px_0px_0px_rgba\(255\2c 255\2c 255\2c 0\.06\)\] {
   --tw-shadow: inset 0 1px 0px 0px rgba(255,255,255,0.06);
   --tw-shadow-colored: inset 0 1px 0px 0px var(--tw-shadow-color);
@@ -1134,6 +1142,10 @@ video {
 
 .hover\:text-white\/80:hover {
   color: rgb(255 255 255 / 0.8);
+}
+
+.hover\:opacity-100:hover {
+  opacity: 1;
 }
 
 .hover\:outline-none:hover {
