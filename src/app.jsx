@@ -225,30 +225,38 @@ const projects = [
       },
     ],
   },
-  {
-    title: "Collaborations with Friends",
-    items: [
-      {
-        name: "GPT Tutorials",
-        technologies: "Vue | Nuxt | Sass",
-        image: "gpttutorials.png",
-        link: "https://gpttutorials.io/",
-        description:
-          "Developed a website where users can see reviews and use cases of GPT software.",
-      },
-      {
-        name: "StackAI",
-        technologies: "Vue | Nuxt | Sass",
-        image: "stackai.png",
-        link: "https://stackai.co/",
-        description:
-          "Developed a website where users can see reviews of AI apps.",
-      },
-    ],
-  },
+  // {
+  //   title: "Collaborations with Friends",
+  //   items: [
+  //     {
+  //       name: "GPT Tutorials",
+  //       technologies: "Vue | Nuxt | Sass",
+  //       image: "gpttutorials.png",
+  //       link: "https://gpttutorials.io/",
+  //       description:
+  //         "Developed a website where users can see reviews and use cases of GPT software.",
+  //     },
+  //     {
+  //       name: "StackAI",
+  //       technologies: "Vue | Nuxt | Sass",
+  //       image: "stackai.png",
+  //       link: "https://stackai.co/",
+  //       description:
+  //         "Developed a website where users can see reviews of AI apps.",
+  //     },
+  //   ],
+  // },
   {
     title: "Personal Projects",
     items: [
+      {
+        new: true,
+        name: "Tailgallery",
+        technologies: "NextJs | Tailwind | Firebase",
+        image: "tailgallery.png",
+        link: "https://tailgallery.com",
+        description: "Platform to sell TailwindCSS components and templates.",
+      },
       {
         name: "Findsnippets",
         technologies: "Nuxt | Sass",
@@ -753,7 +761,20 @@ function Projects(props) {
                         src={"./assets/projects/" + item.image}
                       />
                       <div className="pt-3 px-3 flex flex-col h-full">
-                        <p className="text-white/80">{item.name}</p>
+                        <div className="flex justify-between items-start">
+                          <p
+                            className={`${
+                              item.new ? "text-[#00f7d0]" : "text-white/80"
+                            }`}
+                          >
+                            {item.name}
+                          </p>
+                          {item.new ? (
+                            <span className="bg-[#00f7d0] text-black block py-0 px-2 rounded-sm text-sm font-medium">
+                              New
+                            </span>
+                          ) : null}
+                        </div>
                         <p className="text-white/50 text-sm mt-2">
                           {item.technologies}
                         </p>
@@ -766,7 +787,7 @@ function Projects(props) {
                           }}
                           href={item.link}
                           target="_blank"
-                          className="text-white/50 w-full block mt-auto py-3 text-center text-sm hover:text-white border-t border-t-[#000000]"
+                          className={`text-white/50 w-full block mt-auto py-3 text-center text-sm hover:text-white border-t border-t-[#000000]`}
                         >
                           View
                         </a>
