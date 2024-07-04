@@ -252,6 +252,14 @@ const projects = [
     items: [
       {
         new: true,
+        name: "Interview Assessment",
+        technologies: "NextJs | Tailwind",
+        image: "emoji-picker.png",
+        link: "https://emoji-picker-enhanced.netlify.app/",
+        description:
+          "Textbox which allows to insert emojis anywhere in the text.",
+      },
+      {
         name: "Tailgallery",
         technologies: "NextJs | Tailwind | Firebase",
         image: "tailgallery.png",
@@ -679,7 +687,7 @@ function Highlights(props) {
             onMouseLeave={() => resume(index)}
             className={`marquee mt-14 ${
               index % 2 == 0 ? "left-to-right" : "right-to-left"
-            } ${animationPause == index ? "pause" : null}`} 
+            } ${animationPause == index ? "pause" : null}`}
           >
             {group.map((item) => {
               return (

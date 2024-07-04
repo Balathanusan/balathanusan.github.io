@@ -201,6 +201,12 @@ var projects = [{
   title: "Personal Projects",
   items: [{
     new: true,
+    name: "Interview Assessment",
+    technologies: "NextJs | Tailwind",
+    image: "emoji-picker.png",
+    link: "https://emoji-picker-enhanced.netlify.app/",
+    description: "Textbox which allows to insert emojis anywhere in the text."
+  }, {
     name: "Tailgallery",
     technologies: "NextJs | Tailwind | Firebase",
     image: "tailgallery.png",
