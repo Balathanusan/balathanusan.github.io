@@ -61,10 +61,10 @@ const skills = [
     name: "Firebase",
     icon: "firebase.svg",
   },
-  {
-    name: "JQuery",
-    icon: "jquery.svg",
-  },
+  // {
+  //   name: "JQuery",
+  //   icon: "jquery.svg",
+  // },
   {
     name: "NodeJs",
     icon: "nodejs.svg",
@@ -81,6 +81,10 @@ const skills = [
   {
     name: "Docker",
     icon: "docker.svg",
+  },
+  {
+    name: "Figma",
+    icon: "figma.svg",
   },
   {
     name: "Photoshop",
@@ -810,7 +814,7 @@ function Projects(props) {
                           }}
                           href={item.link}
                           target="_blank"
-                          className={`text-white/50 w-full block mt-auto py-3 text-center text-sm hover:text-white border-t border-t-[#000000]`}
+                          className={`text-white/50 w-full block mt-auto py-3 text-center text-sm hover:text-white transition-colors border-t border-t-[#000000]`}
                         >
                           View
                         </a>
