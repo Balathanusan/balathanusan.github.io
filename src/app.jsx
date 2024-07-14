@@ -264,6 +264,14 @@ const projects = [
           "Textbox which allows to insert emojis anywhere in the text.",
       },
       {
+        name: "Interview Assessment",
+        technologies: "NextJs | Tailwind",
+        image: "frontend-task-2024-ultra-violet.png",
+        link: "https://frontend-task-2024-ultra-violet.netlify.app/",
+        description:
+          "Converted the given Figma design into a website",
+      },
+      {
         name: "Tailgallery",
         technologies: "NextJs | Tailwind | Firebase",
         image: "tailgallery.png",
