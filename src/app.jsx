@@ -127,7 +127,7 @@ const projects = [
           "Created a comprehensive web app, enabling users to create, edit, and share product videos with advanced editing features.",
       },
       {
-        name: "Interview Assessment",
+        name: "Interview Assessment 2",
         technologies: "Vue | Sass",
         image: "trainn-assignment.png",
         link: "https://poetic-daifuku-99449b.netlify.app/",
@@ -196,7 +196,7 @@ const projects = [
           "Platform where users can create HTML forms using drag and drop function.",
       },
       {
-        name: "Interview Assessment",
+        name: "Interview Assessment 1",
         technologies: "Html | Css | JavaScript",
         image: "finoculus-assignment.png",
         link: "https://peppy-cendol-81ca4a.netlify.app/",
@@ -256,7 +256,7 @@ const projects = [
     items: [
       {
         new: true,
-        name: "Interview Assessment",
+        name: "Interview Assessment 4",
         technologies: "NextJs | Tailwind",
         image: "emoji-picker.png",
         link: "https://emoji-picker-enhanced.netlify.app/",
@@ -264,7 +264,7 @@ const projects = [
           "Textbox which allows to insert emojis anywhere in the text.",
       },
       {
-        name: "Interview Assessment",
+        name: "Interview Assessment 3",
         technologies: "NextJs | Tailwind",
         image: "frontend-task-2024-ultra-violet.png",
         link: "https://frontend-task-2024-ultra-violet.netlify.app/",

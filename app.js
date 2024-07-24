@@ -101,7 +101,7 @@ var projects = [{
     link: "https://app.trainn.co/",
     description: "Created a comprehensive web app, enabling users to create, edit, and share product videos with advanced editing features."
   }, {
-    name: "Interview Assessment",
+    name: "Interview Assessment 2",
     technologies: "Vue | Sass",
     image: "trainn-assignment.png",
     link: "https://poetic-daifuku-99449b.netlify.app/",
@@ -153,7 +153,7 @@ var projects = [{
     link: "https://form-creator-zealous-meninsky-54ec22.netlify.app/",
     description: "Platform where users can create HTML forms using drag and drop function."
   }, {
-    name: "Interview Assessment",
+    name: "Interview Assessment 1",
     technologies: "Html | Css | JavaScript",
     image: "finoculus-assignment.png",
     link: "https://peppy-cendol-81ca4a.netlify.app/",
@@ -206,13 +206,13 @@ var projects = [{
   title: "Personal Projects",
   items: [{
     new: true,
-    name: "Interview Assessment",
+    name: "Interview Assessment 4",
     technologies: "NextJs | Tailwind",
     image: "emoji-picker.png",
     link: "https://emoji-picker-enhanced.netlify.app/",
     description: "Textbox which allows to insert emojis anywhere in the text."
   }, {
-    name: "Interview Assessment",
+    name: "Interview Assessment 3",
     technologies: "NextJs | Tailwind",
     image: "frontend-task-2024-ultra-violet.png",
     link: "https://frontend-task-2024-ultra-violet.netlify.app/",
