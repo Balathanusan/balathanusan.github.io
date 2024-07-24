@@ -699,25 +699,8 @@ function Projects(props) {
     { id: "projects", className: "max-w-7xl mx-auto px-6 md:px-12 py-12" },
     React.createElement(
       "div",
-      { className: "font-bold text-center text-2xl" },
+      { className: "font-bold text-center text-2xl mb-20" },
       "Projects"
-    ),
-    React.createElement(
-      "div",
-      { className: "flex justify-center items-center gap-4 sm:gap-8 md:gap-12 my-20" },
-      companies.map(function (company) {
-        return React.createElement(
-          "div",
-          {
-            key: company.image,
-            className: "grayscale select-none pointer-events-none " + (company.invert ? "invert opacity-50" : null)
-          },
-          React.createElement("img", {
-            className: "h-full max-h-5 sm:max-h-none sm:h-6 md:h-8",
-            src: "./assets/companies/" + company.image
-          })
-        );
-      })
     ),
     React.createElement(
       "div",

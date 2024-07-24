@@ -756,8 +756,8 @@ function Projects(props) {
 
   return (
     <div id="projects" className="max-w-7xl mx-auto px-6 md:px-12 py-12">
-      <div className="font-bold text-center text-2xl">Projects</div>
-      <div className="flex justify-center items-center gap-4 sm:gap-8 md:gap-12 my-20">
+      <div className="font-bold text-center text-2xl mb-20">Projects</div>
+      {/* <div className="flex justify-center items-center gap-4 sm:gap-8 md:gap-12 my-20">
         {companies.map((company) => {
           return (
             <div
@@ -773,7 +773,7 @@ function Projects(props) {
             </div>
           );
         })}
-      </div>
+      </div> */}
       <div className="space-y-14">
         {projects.map((project) => {
           return (
