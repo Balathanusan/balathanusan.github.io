@@ -275,7 +275,7 @@ const projects = [
         name: "Tailgallery",
         technologies: "NextJs | Tailwind | Firebase",
         image: "tailgallery.png",
-        link: "https://tailgallery.com",
+        link: "https://luminous-tailgallery.netlify.app/",
         description: "Platform to sell TailwindCSS components and templates.",
       },
       {
