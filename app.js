@@ -254,6 +254,12 @@ var projects = [{
     link: "https://regal-sunflower-1eb4ea.netlify.app/",
     description: "Blogging site where I used to post articles related to web development."
   }, {
+    name: "BirthdayWishes",
+    technologies: "NextJs | Tailwind",
+    image: "happybirthdaywishes.png",
+    link: "https://flower-birthday-wishes-2024.netlify.app/",
+    description: "Statically generated site for birthday wishes."
+  }, {
     name: "Webdevfix V2",
     technologies: "Nuxt | Sass",
     image: "webdevfix-v2.png",
@@ -487,11 +493,11 @@ function Header(props) {
           "span",
           {
             onClick: function onClick() {
-              return goTo("projects");
+              return goTo("experience");
             },
             className: "cursor-pointer text-white/50 hover:text-white transition-colors"
           },
-          "Projects"
+          "Experience"
         ),
         React.createElement(
           "span",
@@ -687,7 +693,7 @@ function Skills(props) {
   );
 }
 
-function Projects(props) {
+function Experience(props) {
   function view(name) {
     window._fb.updateDoc(window._fb.doc(window._fb.db, "Views", window._fb.docRef.id), {
       clicks: window._fb.arrayUnion(name)
@@ -696,11 +702,11 @@ function Projects(props) {
 
   return React.createElement(
     "div",
-    { id: "projects", className: "max-w-7xl mx-auto px-6 md:px-12 py-12" },
+    { id: "experience", className: "max-w-7xl mx-auto px-6 md:px-12 py-12" },
     React.createElement(
       "div",
       { className: "font-bold text-center text-2xl mb-20" },
-      "Projects"
+      "Experience"
     ),
     React.createElement(
       "div",
@@ -1027,7 +1033,7 @@ function App() {
       { className: "space-y-24 md:space-y-32" },
       React.createElement(Highlights, null),
       React.createElement(Skills, null),
-      React.createElement(Projects, null),
+      React.createElement(Experience, null),
       React.createElement(Contact, null)
     ),
     React.createElement(Footer, null)

@@ -319,6 +319,14 @@ const projects = [
           "Blogging site where I used to post articles related to web development.",
       },
       {
+        name: "BirthdayWishes",
+        technologies: "NextJs | Tailwind",
+        image: "happybirthdaywishes.png",
+        link: "https://flower-birthday-wishes-2024.netlify.app/",
+        description:
+          "Statically generated site for birthday wishes.",
+      }, 
+      {
         name: "Webdevfix V2",
         technologies: "Nuxt | Sass",
         image: "webdevfix-v2.png",
@@ -591,10 +599,10 @@ function Header(props) {
             Skills
           </span>
           <span
-            onClick={() => goTo("projects")}
+            onClick={() => goTo("experience")}
             className="cursor-pointer text-white/50 hover:text-white transition-colors"
           >
-            Projects
+            Experience
           </span>
           <span
             onClick={() => goTo("contact")}
@@ -744,7 +752,7 @@ function Skills(props) {
   );
 }
 
-function Projects(props) {
+function Experience(props) {
   function view(name) {
     window._fb
       .updateDoc(window._fb.doc(window._fb.db, "Views", window._fb.docRef.id), {
@@ -755,8 +763,8 @@ function Projects(props) {
   }
 
   return (
-    <div id="projects" className="max-w-7xl mx-auto px-6 md:px-12 py-12">
-      <div className="font-bold text-center text-2xl mb-20">Projects</div>
+    <div id="experience" className="max-w-7xl mx-auto px-6 md:px-12 py-12">
+      <div className="font-bold text-center text-2xl mb-20">Experience</div>
       {/* <div className="flex justify-center items-center gap-4 sm:gap-8 md:gap-12 my-20">
         {companies.map((company) => {
           return (
@@ -1035,8 +1043,8 @@ function App() {
       <div className="space-y-24 md:space-y-32">
         <Highlights></Highlights>
         <Skills></Skills>
-        <Projects></Projects>
-        <Contact></Contact>
+        <Experience></Experience>
+        <Contact></Contact> 
       </div>
       <Footer></Footer>
     </div>
