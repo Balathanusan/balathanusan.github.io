@@ -252,10 +252,18 @@ const projects = [
   //   ],
   // },
   {
-    title: "Personal Projects",
+    title: "Personal & Other Projects",
     items: [
       {
         new: true,
+        name: "Frager",
+        technologies: "NextJs | Tailwind",
+        image: "frager.png",
+        link: "#",
+        description:
+          "Feedback and survey platform localized for Switzerland, featuring AI-driven form generation.",
+      },
+      {
         name: "Interview Assessment 4",
         technologies: "NextJs | Tailwind",
         image: "emoji-picker.png",
@@ -268,8 +276,7 @@ const projects = [
         technologies: "NextJs | Tailwind",
         image: "frontend-task-2024-ultra-violet.png",
         link: "https://frontend-task-2024-ultra-violet.netlify.app/",
-        description:
-          "Converted the given Figma design into a website",
+        description: "Converted the given Figma design into a website",
       },
       {
         name: "Tailgallery",
@@ -323,9 +330,8 @@ const projects = [
         technologies: "NextJs | Tailwind",
         image: "happybirthdaywishes.png",
         link: "https://flower-birthday-wishes-2024.netlify.app/",
-        description:
-          "Statically generated site for birthday wishes.",
-      }, 
+        description: "Statically generated site for birthday wishes.",
+      },
       {
         name: "Webdevfix V2",
         technologies: "Nuxt | Sass",
@@ -1044,7 +1050,7 @@ function App() {
         <Highlights></Highlights>
         <Skills></Skills>
         <Experience></Experience>
-        <Contact></Contact> 
+        <Contact></Contact>
       </div>
       <Footer></Footer>
     </div>

@@ -203,9 +203,15 @@ var projects = [{
 //   ],
 // },
 {
-  title: "Personal Projects",
+  title: "Personal & Other Projects",
   items: [{
     new: true,
+    name: "Frager",
+    technologies: "NextJs | Tailwind",
+    image: "frager.png",
+    link: "#",
+    description: "Feedback and survey platform localized for Switzerland, featuring AI-driven form generation."
+  }, {
     name: "Interview Assessment 4",
     technologies: "NextJs | Tailwind",
     image: "emoji-picker.png",
