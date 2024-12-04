@@ -255,7 +255,7 @@ const projects = [
     title: "Personal & Other Projects",
     items: [
       {
-        new: true,
+        soon: true,
         name: "Frager",
         technologies: "NextJs | Tailwind",
         image: "frager.png",
@@ -813,14 +813,16 @@ function Experience(props) {
                         <div className="flex justify-between items-start">
                           <p
                             className={`${
-                              item.new ? "text-[#00f7d0]" : "text-white/80"
+                              item.new || item.soon
+                                ? "text-[#00f7d0]"
+                                : "text-white/80"
                             }`}
                           >
                             {item.name}
                           </p>
-                          {item.new ? (
+                          {item.new || item.soon ? (
                             <span className="bg-[#00f7d0] text-black block py-0 px-2 rounded-sm text-sm font-medium">
-                              New
+                              {item.soon ? "Soon" : "New"}
                             </span>
                           ) : null}
                         </div>

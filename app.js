@@ -205,7 +205,7 @@ var projects = [{
 {
   title: "Personal & Other Projects",
   items: [{
-    new: true,
+    soon: true,
     name: "Frager",
     technologies: "NextJs | Tailwind",
     image: "frager.png",
@@ -756,14 +756,14 @@ function Experience(props) {
                     React.createElement(
                       "p",
                       {
-                        className: "" + (item.new ? "text-[#00f7d0]" : "text-white/80")
+                        className: "" + (item.new || item.soon ? "text-[#00f7d0]" : "text-white/80")
                       },
                       item.name
                     ),
-                    item.new ? React.createElement(
+                    item.new || item.soon ? React.createElement(
                       "span",
                       { className: "bg-[#00f7d0] text-black block py-0 px-2 rounded-sm text-sm font-medium" },
-                      "New"
+                      item.soon ? "Soon" : "New"
                     ) : null
                   ),
                   React.createElement(
