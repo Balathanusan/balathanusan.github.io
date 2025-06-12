@@ -206,10 +206,16 @@ var projects = [{
   title: "Personal & Other Projects",
   items: [{
     soon: true,
+    name: "Grusspost",
+    technologies: "NextJs | Tailwind",
+    image: "grusspost.png",
+    link: "https://umfragch.netlify.app/",
+    description: "An online platform to Buy or Send Greeting Cards Online within Switzerland."
+  }, {
     name: "Frager",
     technologies: "NextJs | Tailwind",
     image: "frager.png",
-    link: "#",
+    link: "https://umfragch.netlify.app/",
     description: "Feedback and survey platform localized for Switzerland, featuring AI-driven form generation."
   }, {
     name: "Interview Assessment 4",
