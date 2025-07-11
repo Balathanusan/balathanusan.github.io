@@ -206,10 +206,10 @@ var projects = [{
   title: "Personal & Other Projects",
   items: [{
     soon: true,
-    name: "Grusspost",
+    name: "Gruz",
     technologies: "NextJs | Tailwind",
     image: "grusspost.png",
-    link: "https://umfragch.netlify.app/",
+    link: "https://gruz.ch/",
     description: "An online platform to Buy or Send Greeting Cards Online within Switzerland."
   }, {
     name: "Frager",
