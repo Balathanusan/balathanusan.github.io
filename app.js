@@ -205,7 +205,7 @@ var projects = [{
 {
   title: "Personal & Other Projects",
   items: [{
-    soon: true,
+    new: true,
     name: "Gruz",
     technologies: "NextJs | Tailwind",
     image: "grusspost.png",
@@ -468,7 +468,7 @@ function Header(props) {
   return React.createElement(
     "div",
     {
-      className: "max-w-screen-2xl mx-auto sticky z-50 top-0 transition-all duration-300 \n      " + (showBg ? bgSecondary : null) + " \n      " + (!show ? "opacity-0 -translate-y-4" : null)
+      className: "max-w-screen-2xl mx-auto z-50 top-0 transition-all duration-300 \n      " + (showBg ? bgSecondary : null) + " \n      " + (!show ? "opacity-0 -translate-y-4" : null)
     },
     React.createElement(
       "div",
@@ -544,7 +544,7 @@ function Hero(props) {
         React.createElement(
           "div",
           { className: "font-medium md:text-lg text-white/80" },
-          "Hi, I'm Thanusan"
+          "Hi, I'm Balathanusan"
         ),
         React.createElement(
           "div",
@@ -1033,11 +1033,19 @@ function Footer(props) {
 }
 
 function App() {
-  console.log("%cI'm not a great programmer; I'm just a good programmer with great habits (of Googling).", ["font-size: 12px", "font-family: monospace", "background: #00f9d0", "display: inline-block", "color: black", "padding: 8px 20px", "margin: 8px 19px", "border: 1px dashed;"].join(";"));
+  console.log("%cI'm not a great programmer; I'm just a good programmer with great skills (of asking AI).", ["font-size: 12px", "font-family: monospace", "background: #00f9d0", "display: inline-block", "color: black", "padding: 8px 20px", "margin: 8px 19px", "border: 1px dashed;"].join(";"));
 
   return React.createElement(
     "div",
     { className: bgPrimary + " text-white" },
+    React.createElement(
+      "a",
+      {
+        href: "https://gruz.ch",
+        className: "sticky py-1 top-0 w-full bg-red-500 z-50 block text-center"
+      },
+      "New launch - www.gruz.ch (view \u2192)"
+    ),
     React.createElement(Header, null),
     React.createElement(Hero, null),
     React.createElement(

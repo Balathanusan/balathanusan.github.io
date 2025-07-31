@@ -255,7 +255,7 @@ const projects = [
     title: "Personal & Other Projects",
     items: [
       {
-        soon: true,
+        new: true,
         name: "Gruz",
         technologies: "NextJs | Tailwind",
         image: "grusspost.png",
@@ -591,7 +591,7 @@ function Header(props) {
   }
   return (
     <div
-      className={`max-w-screen-2xl mx-auto sticky z-50 top-0 transition-all duration-300 
+      className={`max-w-screen-2xl mx-auto z-50 top-0 transition-all duration-300 
       ${showBg ? bgSecondary : null} 
       ${!show ? "opacity-0 -translate-y-4" : null}`}
     >
@@ -644,7 +644,7 @@ function Hero(props) {
       <div className="flex-1 flex items-center">
         <div className="w-full">
           <div className="font-medium md:text-lg text-white/80">
-            Hi, I'm Thanusan
+            Hi, I'm Balathanusan
           </div>
           <div className="font-bold text-3xl md:text-5xl mt-2">
             Software Developer
@@ -1039,7 +1039,7 @@ function Footer(props) {
 
 function App() {
   console.log(
-    "%cI'm not a great programmer; I'm just a good programmer with great habits (of Googling).",
+    "%cI'm not a great programmer; I'm just a good programmer with great skills (of asking AI).",
     [
       "font-size: 12px",
       "font-family: monospace",
@@ -1054,6 +1054,12 @@ function App() {
 
   return (
     <div className={`${bgPrimary} text-white`}>
+      <a
+        href="https://gruz.ch"
+        className="sticky py-1 top-0 w-full bg-red-500 z-50 block text-center"
+      >
+        New launch - www.gruz.ch (view →)
+      </a>
       <Header></Header>
       <Hero></Hero>
       <div className="space-y-24 md:space-y-32">
