@@ -1,12 +1,11 @@
 'use client'
 
-import { useFirebase } from '@/lib/firebase'
+import { getFirebase } from '@/lib/firebase'
 import { projects, bgSecondary } from '@/lib/constants'
 
 export default function Experience() {
-  const fb = useFirebase()
-
   function view(name) {
+    const fb = getFirebase()
     if (fb) {
       fb.updateDoc(fb.doc(fb.db, 'Views', fb.docRef.id), {
         clicks: fb.arrayUnion(name),

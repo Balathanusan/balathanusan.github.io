@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { initializeApp } from 'firebase/app'
 import {
   getFirestore,
@@ -12,20 +11,29 @@ import {
   serverTimestamp,
 } from 'firebase/firestore'
 
-let firebaseInitialized = false
 let fbInstance = null
+let initPromise = null
 
-export function useFirebase() {
-  const [fb, setFb] = useState(null)
+export async function initializeFirebase() {
+  // Return existing instance if already initialized
+  if (fbInstance) {
+    return fbInstance
+  }
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return
+  // Return existing promise if initialization is in progress
+  if (initPromise) {
+    return initPromise
+  }
+
+  // Start initialization
+  initPromise = (async () => {
+    if (typeof window === 'undefined') return null
 
     if (
       window.location.hostname === 'balathanusan.github.io' &&
       window.location.hash !== '#admin'
     ) {
-      if (!firebaseInitialized) {
+      try {
         const firebaseConfig = {
           apiKey: 'AIzaSyCPMTMNBBFi13ZjAsJ4WpXZH-xS9ht15vI',
           authDomain: 'portfolio-1f7d2.firebaseapp.com',
@@ -38,34 +46,37 @@ export function useFirebase() {
         const app = initializeApp(firebaseConfig)
         const db = getFirestore(app)
 
-        addDoc(collection(db, 'Views'), {
+        const docRef = await addDoc(collection(db, 'Views'), {
           platform: window.navigator.platform,
           vendor: window.navigator.vendor,
           language: window.navigator.language,
           screen: `${window.screen.availWidth}px * ${window.screen.availHeight}px`,
           timestamp: serverTimestamp(),
         })
-          .then((docRef) => {
-            fbInstance = {
-              db,
-              docRef,
-              doc,
-              updateDoc,
-              arrayUnion,
-              serverTimestamp,
-            }
-            setFb(fbInstance)
-            firebaseInitialized = true
-          })
-          .catch(() => {
-            // Silent fail
-          })
-      } else if (fbInstance) {
-        setFb(fbInstance)
+
+        fbInstance = {
+          db,
+          docRef,
+          doc,
+          updateDoc,
+          arrayUnion,
+          serverTimestamp,
+        }
+        return fbInstance
+      } catch (error) {
+        // Silent fail
+        initPromise = null
+        return null
       }
     }
-  }, [])
+    return null
+  })()
 
-  return fb
+  return initPromise
 }
+
+export function getFirebase() {
+  return fbInstance
+}
+
 

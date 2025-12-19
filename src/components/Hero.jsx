@@ -1,12 +1,11 @@
 'use client'
 
-import { useFirebase } from '@/lib/firebase'
+import { getFirebase } from '@/lib/firebase'
 import { myEmail, myLinkedIn, myGitHub, myTwitter } from '@/lib/constants'
 
 export default function Hero() {
-  const fb = useFirebase()
-
   function viewed(site) {
+    const fb = getFirebase()
     if (fb) {
       fb.updateDoc(fb.doc(fb.db, 'Views', fb.docRef.id), {
         viewed: fb.arrayUnion(site),

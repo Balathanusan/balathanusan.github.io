@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useFirebase } from "@/lib/firebase";
+import { getFirebase } from "@/lib/firebase";
 import { myEmail, bgSecondary, textTheme } from "@/lib/constants";
 
 export default function Contact() {
-  const fb = useFirebase();
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [message, setMessage] = useState("");
@@ -61,6 +60,7 @@ export default function Contact() {
 
     setSubmitting(true);
 
+    const fb = getFirebase();
     if (fb) {
       fb.updateDoc(fb.doc(fb.db, "Views", fb.docRef.id), {
         contact: fb.arrayUnion({
@@ -112,7 +112,7 @@ export default function Contact() {
           <input
             value={email}
             onChange={onEmail}
-            className={`${bgSecondary} w-full  p-3 rounded-md text-white/80 placeholder:text-white/50 hover:outline-none active:outline-none border border-transparent focus:border-white/80 focus:outline-none disabled:opacity-50`}
+            className={`w-full bg-white p-3 rounded-md text-black placeholder:text-black/50 hover:outline-none active:outline-none border border-transparent focus:border-white/80 focus:outline-none disabled:opacity-50`}
             type="text"
             placeholder="Email"
             disabled={submitting}
@@ -129,7 +129,7 @@ export default function Contact() {
           <textarea
             value={message}
             onChange={onMessage}
-            className={`${bgSecondary} w-full p-3 rounded-md text-white/80 placeholder:text-white/50 hover:outline-none active:outline-none border border-transparent focus:border-white/80 focus:outline-none resize-none disabled:opacity-50`}
+            className={`bg-white w-full p-3 rounded-md text-black placeholder:text-black/50 hover:outline-none active:outline-none border border-transparent focus:border-white/80 focus:outline-none resize-none disabled:opacity-50`}
             placeholder="Message"
             rows="8"
             disabled={submitting}

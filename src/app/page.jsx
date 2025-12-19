@@ -9,9 +9,13 @@ import Experience from '@/components/Experience'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import { bgPrimary } from '@/lib/constants'
+import { initializeFirebase } from '@/lib/firebase'
 
 export default function Home() {
   useEffect(() => {
+    // Initialize Firebase once when app loads
+    initializeFirebase()
+
     console.log(
       "%cI'm not a great programmer; I'm just a good programmer with great skills (of asking AI).",
       [
