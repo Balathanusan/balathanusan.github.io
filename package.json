@@ -2,22 +2,25 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "like_button.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run babel & npm run tw",
-    "babel": "npx babel --watch src --out-dir . --presets react-app/prod",
-    "tw": "npx tailwindcss -i ./src/app.css -o ./app.css --watch"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2"
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "firebase": "^10.7.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
     "tailwindcss": "^3.4.1"
   }
 }
