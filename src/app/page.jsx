@@ -33,12 +33,12 @@ export default function Home() {
 
   return (
     <div className={`${bgPrimary} text-white`}>
-      {/* <a
+      <a
         href="https://gruz.ch"
         className="sticky py-1 top-0 w-full bg-red-500 z-50 block text-center"
       >
         New launch - www.gruz.ch (view →)
-      </a> */}
+      </a>
       <Header />
       <Hero />
       <div className="space-y-24 md:space-y-32">
