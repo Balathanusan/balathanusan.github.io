@@ -234,7 +234,7 @@ export const projects = [
         name: "Gruz",
         technologies: "NextJs | Tailwind",
         image: "grusspost.png",
-        link: "https://gruz.ch/",
+        link: "https://gruz-ch-2025.netlify.app/",
         description:
           "An online platform to Buy or Send Greeting Cards Online within Switzerland.",
       },
