@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { getFirebase } from "@/lib/firebase";
-import { myEmail, bgSecondary, textTheme } from "@/lib/constants";
+import { myEmail } from "@/lib/constants";
 
 export default function Contact() {
   const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ export default function Contact() {
       if (
         !e.target.value ||
         !e.target.value.match(
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
         )
       ) {
         setEmailError(true);
@@ -112,7 +112,7 @@ export default function Contact() {
           <input
             value={email}
             onChange={onEmail}
-            className={`w-full bg-white p-3 rounded-md text-black placeholder:text-black/50 hover:outline-none active:outline-none border border-transparent focus:border-white/80 focus:outline-none disabled:opacity-50`}
+            className={`w-full bg-secondary p-3 rounded-md text-white placeholder:text-white/50 hover:outline-none active:outline-none border border-transparent focus:border-white/80 focus:outline-none disabled:opacity-50`}
             type="text"
             placeholder="Email"
             disabled={submitting}
@@ -129,7 +129,7 @@ export default function Contact() {
           <textarea
             value={message}
             onChange={onMessage}
-            className={`bg-white w-full p-3 rounded-md text-black placeholder:text-black/50 hover:outline-none active:outline-none border border-transparent focus:border-white/80 focus:outline-none resize-none disabled:opacity-50`}
+            className={`bg-secondary w-full p-3 rounded-md text-white placeholder:text-white/50 hover:outline-none active:outline-none border border-transparent focus:border-white/80 focus:outline-none resize-none disabled:opacity-50`}
             placeholder="Message"
             rows="8"
             disabled={submitting}
@@ -145,9 +145,7 @@ export default function Contact() {
         <div className="flex justify-between items-center">
           <div>
             {submitSuccess ? (
-              <span className={`${textTheme}`}>
-                Thank you. Message received.
-              </span>
+              <span className="text-theme">Thank you. Message received.</span>
             ) : null}
             {submitError ? (
               <span className={`text-red-700`}>Something went wrong.</span>
@@ -155,7 +153,7 @@ export default function Contact() {
           </div>
           <button
             onClick={submit}
-            className={`rounded-md py-3 px-10 text-white/50 transition-colors hover:text-white ${bgSecondary} disabled:opacity-50`}
+            className="rounded-md py-3 px-10 text-white/50 transition-colors hover:text-white bg-secondary disabled:opacity-50"
             disabled={submitting}
           >
             Send

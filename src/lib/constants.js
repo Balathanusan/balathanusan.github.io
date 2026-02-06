@@ -1,9 +1,4 @@
 // Consts
-export const textTheme = "text-[#00f9d0]";
-export const bgTheme = "bg-[#00f9d0]";
-export const bgPrimary = "bg-[#000]";
-export const bgSecondary = "bg-[#16191e]";
-export const bgShadow = "shadow-[inset_0_1px_0px_0px_rgba(255,255,255,0.06)]";
 
 export const myEmail = "iamthanusan@gmail.com";
 export const myLinkedIn =
@@ -45,8 +40,8 @@ export const skills = [
     icon: "nuxt.svg",
   },
   {
-    name: "React",
-    icon: "react.svg",
+    name: "Angular",
+    icon: "angular.svg",
   },
   {
     name: "Next",
@@ -54,12 +49,24 @@ export const skills = [
     iconInvert: true,
   },
   {
-    name: "Angular",
-    icon: "angular.svg",
+    name: "React",
+    icon: "react.svg",
+  },
+  {
+    name: "React Native",
+    icon: "reactnative.svg",
+  },
+  {
+    name: "Electron",
+    icon: "electron.svg",
   },
   {
     name: "Firebase",
     icon: "firebase.svg",
+  },
+  {
+    name: "Supabase",
+    icon: "supabase.svg",
   },
   {
     name: "NodeJs",
@@ -87,11 +94,48 @@ export const skills = [
     icon: "photoshop.svg",
   },
 ];
-
 export const projects = [
   {
+    title: "Blackcode SA",
+    period: "Nov 2024 - Present | Lausanne, Switzerland",
+    items: [
+      {
+        name: "AIOS Companion",
+        technologies: "Electron",
+        image: "companion.png",
+        link: "https://aioscompanion.com/",
+        description:
+          "Native Agentic AI developed in Electron that automates complex computer tasks.",
+      },
+      {
+        name: "Metaesthetics - Mobile App",
+        technologies: "React Native",
+        image: "metamobile.png",
+        link: "https://blackcode.ch/",
+        description:
+          "Mobile platform for users to explore clinics, treatments, and book appointments.",
+      },
+      {
+        name: "Metaesthetics - Tablet App",
+        technologies: "React Native",
+        image: "metaipad.png",
+        link: "https://blackcode.ch/",
+        description:
+          "Specialized tablet application for doctors to manage patient appointments and workflows.",
+      },
+      {
+        name: "Clinic Webapp",
+        technologies: "React | SCSS",
+        image: "metaclinic.png",
+        link: "https://blackcode.ch/",
+        description:
+          "Admin dashboard for managing doctors, patients, and clinical operations.",
+      },
+    ],
+  },
+  {
     title: "Namespace Labs Inc",
-    period: "Mar 2024 - Mar 2024",
+    period: "Mar 2024 - Mar 2024 | Zurich, Switzerland",
     items: [
       {
         name: "Pricing page",
@@ -104,7 +148,7 @@ export const projects = [
   },
   {
     title: "Guider Labs India Pvt Ltd.",
-    period: "Mar 2022 - Mar 2023",
+    period: "Mar 2022 - Mar 2023 | Chennai, India",
     items: [
       {
         name: "Trainn - Marketing Site",
@@ -134,7 +178,7 @@ export const projects = [
   },
   {
     title: "Finoculus Software India Pvt Ltd.",
-    period: "Feb 2019 - Feb 2022",
+    period: "Feb 2019 - Feb 2022 | Chennai, India",
     items: [
       {
         name: "Skooly Mobile App",
@@ -230,11 +274,19 @@ export const projects = [
     title: "Personal & Other Projects",
     items: [
       {
-        new: true,
+        name: "Schweizerform",
+        technologies: "NextJs | Tailwind | E2EE",
+        image: "schweizerform.png",
+        link: "https://schweizerform.ch/",
+        soon: true,
+        description:
+          "End-to-end encrypted forms platform, currently under development.",
+      },
+      {
         name: "Gruz",
         technologies: "NextJs | Tailwind",
         image: "grusspost.png",
-        link: "https://gruz.ch/",
+        link: "https://gruz-ch-2025.netlify.app/",
         description:
           "An online platform to Buy or Send Greeting Cards Online within Switzerland.",
       },
@@ -242,7 +294,7 @@ export const projects = [
         name: "Frager",
         technologies: "NextJs | Tailwind",
         image: "frager.png",
-        link: "https://umfragch.netlify.app/",
+        link: "https://frager-online-form.netlify.app/",
         description:
           "Feedback and survey platform localized for Switzerland, featuring AI-driven form generation.",
       },
@@ -529,4 +581,3 @@ export const companies = [
     image: "tias-energy.png",
   },
 ];
-

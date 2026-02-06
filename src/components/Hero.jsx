@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
-import { getFirebase } from '@/lib/firebase'
-import { myEmail, myLinkedIn, myGitHub, myTwitter } from '@/lib/constants'
+import { getFirebase } from "@/lib/firebase";
+import { myEmail, myLinkedIn, myGitHub, myTwitter } from "@/lib/constants";
 
 export default function Hero() {
   function viewed(site) {
-    const fb = getFirebase()
+    const fb = getFirebase();
     if (fb) {
-      fb.updateDoc(fb.doc(fb.db, 'Views', fb.docRef.id), {
+      fb.updateDoc(fb.doc(fb.db, "Views", fb.docRef.id), {
         viewed: fb.arrayUnion(site),
-      })
+      });
     }
   }
 
@@ -29,36 +29,48 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex gap-4 items-center">
             <a
-              onClick={() => viewed('LinkedIn')}
+              onClick={() => viewed("LinkedIn")}
               className="transition-all opacity-70 hover:opacity-100 hover:scale-125"
               target="_blank"
               href={myLinkedIn}
               rel="noopener noreferrer"
             >
-              <img className="w-6" src="/assets/icons/logo-linkedin.svg" alt="LinkedIn" />
+              <img
+                className="w-6"
+                src="/assets/icons/logo-linkedin.svg"
+                alt="LinkedIn"
+              />
             </a>
             <a
-              onClick={() => viewed('Github')}
+              onClick={() => viewed("Github")}
               className="transition-all opacity-70 hover:opacity-100 hover:scale-125"
               target="_blank"
               href={myGitHub}
               rel="noopener noreferrer"
             >
-              <img className="w-6" src="/assets/icons/logo-github.svg" alt="GitHub" />
+              <img
+                className="w-6"
+                src="/assets/icons/logo-github.svg"
+                alt="GitHub"
+              />
             </a>
             <a
-              onClick={() => viewed('Twitter')}
+              onClick={() => viewed("Twitter")}
               className="transition-all opacity-70 hover:opacity-100 hover:scale-125"
               target="_blank"
               href={myTwitter}
               rel="noopener noreferrer"
             >
-              <img className="w-6" src="/assets/icons/logo-twitter.svg" alt="Twitter" />
+              <img
+                className="w-6"
+                src="/assets/icons/logo-twitter.svg"
+                alt="Twitter"
+              />
             </a>
             <a
-              onClick={() => viewed('Email')}
+              onClick={() => viewed("Email")}
               className="transition-all opacity-70 hover:opacity-100 hover:scale-125"
-              href={'mailto:' + myEmail}
+              href={"mailto:" + myEmail}
             >
               <img className="w-6" src="/assets/icons/mail.svg" alt="Email" />
             </a>
@@ -73,6 +85,5 @@ export default function Hero() {
         />
       </div>
     </div>
-  )
+  );
 }
-

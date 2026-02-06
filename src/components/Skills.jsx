@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { skills, bgSecondary, bgShadow } from '@/lib/constants'
+import { skills } from "@/lib/constants";
 
 export default function Skills() {
   return (
@@ -13,19 +13,18 @@ export default function Skills() {
           return (
             <div
               key={skill.name}
-              className={`${bgSecondary} ${bgShadow} rounded-md py-4 flex-1 sm:flex-none px-8 flex flex-col items-center cursor-default`}
+              className="bg-secondary shadow-theme-inset rounded-md py-4 flex-1 sm:flex-none px-8 flex flex-col items-center cursor-default"
             >
               <img
-                className={`${skill.iconInvert ? 'invert' : null} w-6 h-6 mb-2`}
-                src={'/assets/skills/' + skill.icon}
+                className={`${skill.iconInvert ? "invert" : null} w-6 h-6 mb-2`}
+                src={"/assets/skills/" + skill.icon}
                 alt={skill.name}
               />
               <span className="font-medium text-white/50">{skill.name}</span>
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }
-
