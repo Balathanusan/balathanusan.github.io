@@ -97,7 +97,7 @@ export const skills = [
 export const projects = [
   {
     title: "Blackcode SA",
-    period: "Nov 2024 - Present | Lausanne, Switzerland",
+    period: "Nov 2025 - Present | Lausanne, Switzerland",
     items: [
       {
         name: "AIOS Companion",
