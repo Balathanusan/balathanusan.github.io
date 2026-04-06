@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Highlights from "@/components/Highlights";
 import Skills from "@/components/Skills";
+import Services from "@/components/Services";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -27,6 +28,7 @@ export default function Home() {
       <Header />
       <Hero />
       <div className="space-y-24 md:space-y-32">
+        <Services />
         <Highlights />
         <Skills />
         <Experience />

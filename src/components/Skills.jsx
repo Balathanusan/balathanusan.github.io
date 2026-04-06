@@ -6,7 +6,7 @@ export default function Skills() {
   return (
     <div id="skills" className="max-w-7xl mx-auto px-6 md:px-12 py-12">
       <div className="font-bold text-center text-2xl">
-        Technology Proficiency
+        Technologien
       </div>
       <div className="flex gap-4 flex-wrap items-center justify-center mt-20">
         {skills.map((skill) => {

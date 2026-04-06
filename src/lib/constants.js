@@ -94,26 +94,57 @@ export const skills = [
     icon: "photoshop.svg",
   },
 ];
+export const services = [
+  {
+    title: "Webentwicklung",
+    description:
+      "Moderne, responsive Webseiten und Webanwendungen mit den neuesten Technologien wie React, Next.js, Vue und Nuxt.",
+    icon: "🌐",
+  },
+  {
+    title: "Mobile Apps",
+    description:
+      "Plattformübergreifende mobile Anwendungen für iOS und Android mit React Native und Ionic.",
+    icon: "📱",
+  },
+  {
+    title: "UI/UX Design",
+    description:
+      "Benutzerfreundliche Interfaces und ansprechende Designs mit Figma und Adobe Photoshop.",
+    icon: "🎨",
+  },
+  {
+    title: "Desktop-Anwendungen",
+    description:
+      "Native Desktop-Applikationen mit Electron für Windows, macOS und Linux.",
+    icon: "🖥️",
+  },
+  {
+    title: "Landing Pages",
+    description:
+      "Professionelle, conversionoptimierte Landing Pages für Ihr Unternehmen oder Produkt.",
+    icon: "🚀",
+  },
+  {
+    title: "Beratung",
+    description:
+      "Technische Beratung und Unterstützung bei der Auswahl der richtigen Technologien für Ihr Projekt.",
+    icon: "💡",
+  },
+];
+
 export const projects = [
   {
     title: "Blackcode SA",
-    period: "Nov 2025 - Present | Lausanne, Switzerland",
+    period: "März 2026 - Heute | Lausanne, Schweiz",
     items: [
-      {
-        name: "AIOS Companion",
-        technologies: "Electron",
-        image: "companion.png",
-        link: "https://aioscompanion.com/",
-        description:
-          "Native Agentic AI developed in Electron that automates complex computer tasks.",
-      },
       {
         name: "Metaesthetics - Mobile App",
         technologies: "React Native",
         image: "metamobile.png",
         link: "https://blackcode.ch/",
         description:
-          "Mobile platform for users to explore clinics, treatments, and book appointments.",
+          "Mobile Plattform für Nutzer zum Entdecken von Kliniken, Behandlungen und zur Terminbuchung.",
       },
       {
         name: "Metaesthetics - Tablet App",
@@ -121,7 +152,7 @@ export const projects = [
         image: "metaipad.png",
         link: "https://blackcode.ch/",
         description:
-          "Specialized tablet application for doctors to manage patient appointments and workflows.",
+          "Spezialisierte Tablet-Anwendung für Ärzte zur Verwaltung von Patiententerminen und Arbeitsabläufen.",
       },
       {
         name: "Clinic Webapp",
@@ -129,34 +160,49 @@ export const projects = [
         image: "metaclinic.png",
         link: "https://blackcode.ch/",
         description:
-          "Admin dashboard for managing doctors, patients, and clinical operations.",
+          "Admin-Dashboard zur Verwaltung von Ärzten, Patienten und klinischen Abläufen.",
       },
+    ],
+  },
+    {
+    title: "AIOS Companion",
+    period: "Februar 2026 - Heute | Lausanne, Schweiz",
+    items: [
+      {
+        name: "AIOS Companion",
+        technologies: "Electron",
+        image: "companion.png",
+        link: "https://aioscompanion.com/",
+        description:
+          "Native Agentic AI, entwickelt in Electron, die komplexe Computer-Aufgaben automatisiert.",
+      }
     ],
   },
   {
     title: "Namespace Labs Inc",
-    period: "Mar 2024 - Mar 2024 | Zurich, Switzerland",
+    period: "Mär 2024 - Mär 2024 | Zürich, Schweiz",
+    hidden: true,
     items: [
       {
         name: "Pricing page",
         technologies: "React | NextJs | Typescript | Tailwind",
         image: "namespace.png",
         link: "https://www.namespace.so/pricing",
-        description: "Revamped the pricing page of their marketing site.",
+        description: "Neugestaltung der Preisseite der Marketing-Website.",
       },
     ],
   },
   {
     title: "Guider Labs India Pvt Ltd.",
-    period: "Mar 2022 - Mar 2023 | Chennai, India",
+    period: "Mär 2022 - Mär 2023 | Chennai, Indien",
     items: [
       {
-        name: "Trainn - Marketing Site",
+        name: "Trainn - Marketing-Website",
         technologies: "Vue | Nuxt | Sass | CMS",
         image: "trainn-website.png",
         link: "https://trainn.co/",
         description:
-          "Developed this marketing site showcases the features of the SaaS product Trainn.",
+          "Marketing-Website entwickelt, die die Funktionen des SaaS-Produkts Trainn präsentiert.",
       },
       {
         name: "Trainn - WebApp",
@@ -164,7 +210,7 @@ export const projects = [
         image: "trainn-webapp.png",
         link: "https://app.trainn.co/",
         description:
-          "Created a comprehensive web app, enabling users to create, edit, and share product videos with advanced editing features.",
+          "Umfassende Web-App erstellt, mit der Nutzer Produktvideos erstellen, bearbeiten und teilen können.",
       },
       {
         name: "Interview Assessment 2",
@@ -172,13 +218,13 @@ export const projects = [
         image: "trainn-assignment.png",
         link: "https://poetic-daifuku-99449b.netlify.app/",
         description:
-          "Developed a files and folder management app similar to Google Drive.",
+          "Datei- und Ordnerverwaltungs-App ähnlich wie Google Drive entwickelt.",
       },
     ],
   },
   {
     title: "Finoculus Software India Pvt Ltd.",
-    period: "Feb 2019 - Feb 2022 | Chennai, India",
+    period: "Feb 2019 - Feb 2022 | Chennai, Indien",
     items: [
       {
         name: "Skooly Mobile App",
@@ -186,15 +232,15 @@ export const projects = [
         image: "app.png",
         link: "https://play.google.com/store/apps/details?id=com.skooly.app",
         description:
-          "Developed and deployed over 35 screens for the Skooly mobile app.",
+          "Über 35 Bildschirme für die Skooly Mobile App entwickelt und veröffentlicht.",
       },
       {
-        name: "Skooly Marketing Site",
+        name: "Skooly Marketing-Website",
         technologies: "Html | Css | JavaScript | Eleventy",
         image: "skooly1.png",
         link: "https://getskooly.com/schools/en/",
         description:
-          " Designed and developed all pages of the marketing site using Eleventy as the static site generator.",
+          "Alle Seiten der Marketing-Website mit Eleventy als Static Site Generator gestaltet und entwickelt.",
       },
       {
         name: "Skooly Marketplace",
@@ -202,7 +248,7 @@ export const projects = [
         image: "skooly2.png",
         link: "https://getskooly.com/",
         description:
-          "Developed authentication, quickChat, dashboard, and other UIs for school/academy management web app.",
+          "Authentifizierung, QuickChat, Dashboard und weitere UIs für die Schul-/Akademie-Verwaltungs-Web-App entwickelt.",
       },
       {
         name: "Skooly Online Schools",
@@ -210,7 +256,7 @@ export const projects = [
         image: "online-schools.png",
         link: "https://getskooly.com/",
         description:
-          "Developed UI for a web app where users can list their courses and schedules.",
+          "UI für eine Web-App entwickelt, in der Nutzer ihre Kurse und Zeitpläne auflisten können.",
       },
       {
         name: "Xerovi Admin Dashboard",
@@ -218,14 +264,14 @@ export const projects = [
         image: "xv-admin.png",
         link: "https://xv-admin-gracious-cray-c760c5.netlify.app/",
         description:
-          "Designed/Developed a platform where admin can monitor the building during the pandemic time.",
+          "Plattform gestaltet und entwickelt, mit der Admins Gebäude während der Pandemie überwachen konnten.",
       },
       {
-        name: "Xerovi Marketing Site",
+        name: "Xerovi Marketing-Website",
         technologies: "Html | Css | JavaScript",
         image: "xv.png",
         link: "https://mystifying-bardeen-970f17.netlify.app",
-        description: "Designed/developed a landing page for the Xerovi app.",
+        description: "Landing Page für die Xerovi-App gestaltet und entwickelt.",
       },
       {
         name: "Form Builder",
@@ -233,45 +279,45 @@ export const projects = [
         image: "form-admin.png",
         link: "https://form-creator-zealous-meninsky-54ec22.netlify.app/",
         description:
-          "Platform where users can create HTML forms using drag and drop function.",
+          "Plattform, auf der Nutzer HTML-Formulare per Drag & Drop erstellen können.",
       },
       {
         name: "Interview Assessment 1",
         technologies: "Html | Css | JavaScript",
         image: "finoculus-assignment.png",
         link: "https://peppy-cendol-81ca4a.netlify.app/",
-        description: "Landing page as an Assignment for Finoculus.",
+        description: "Landing Page als Aufgabe für Finoculus.",
       },
     ],
   },
   {
-    title: "Freelance",
+    title: "Freelance-Projekte",
     items: [
       {
         name: "Tiasenergy",
         technologies: "Html | Css | JavaScript | jQuery",
         image: "tias.png",
         link: "https://www.tiasenergy.com/",
-        description: "Developed a landing page for your client.",
+        description: "Landing Page für einen Kunden entwickelt.",
       },
       {
         name: "Sri Venkateswara Company",
         technologies: "Html | Css | JavaScript | jQuery | Bootstrap",
         image: "svs.png",
         link: "https://www.srivenkateswaracompany.com/",
-        description: "Developed a landing page for a client.",
+        description: "Landing Page für einen Kunden entwickelt.",
       },
       {
         name: "RMS Logistics",
         technologies: "Html | Css | JavaScript | jQuery | Bootstrap",
         image: "smss.png",
         link: "https://rms-logistics.in/",
-        description: "Developed a landing page for a client.",
+        description: "Landing Page für einen Kunden entwickelt.",
       },
     ],
   },
   {
-    title: "Personal & Other Projects",
+    title: "Persönliche & weitere Projekte",
     items: [
       {
         name: "Schweizerform",
@@ -280,7 +326,7 @@ export const projects = [
         link: "https://schweizerform.ch/",
         soon: true,
         description:
-          "End-to-end encrypted forms platform, currently under development.",
+          "Ende-zu-Ende verschlüsselte Formular-Plattform, derzeit in Entwicklung.",
       },
       {
         name: "Gruz",
@@ -288,7 +334,7 @@ export const projects = [
         image: "grusspost.png",
         link: "https://gruz-ch-2025.netlify.app/",
         description:
-          "An online platform to Buy or Send Greeting Cards Online within Switzerland.",
+          "Online-Plattform zum Kaufen oder Versenden von Grusspostkarten innerhalb der Schweiz.",
       },
       {
         name: "Frager",
@@ -296,7 +342,7 @@ export const projects = [
         image: "frager.png",
         link: "https://frager-online-form.netlify.app/",
         description:
-          "Feedback and survey platform localized for Switzerland, featuring AI-driven form generation.",
+          "Feedback- und Umfrage-Plattform für die Schweiz mit KI-gesteuerter Formularerstellung.",
       },
       {
         name: "Interview Assessment 4",
@@ -304,21 +350,21 @@ export const projects = [
         image: "emoji-picker.png",
         link: "https://emoji-picker-enhanced.netlify.app/",
         description:
-          "Textbox which allows to insert emojis anywhere in the text.",
+          "Textfeld, das das Einfügen von Emojis an beliebiger Stelle im Text ermöglicht.",
       },
       {
         name: "Interview Assessment 3",
         technologies: "NextJs | Tailwind",
         image: "frontend-task-2024-ultra-violet.png",
         link: "https://frontend-task-2024-ultra-violet.netlify.app/",
-        description: "Converted the given Figma design into a website",
+        description: "Figma-Design in eine Website umgesetzt.",
       },
       {
         name: "Tailgallery",
         technologies: "NextJs | Tailwind | Firebase",
         image: "tailgallery.png",
         link: "https://luminous-tailgallery.netlify.app/",
-        description: "Platform to sell TailwindCSS components and templates.",
+        description: "Plattform zum Verkauf von TailwindCSS-Komponenten und Templates.",
       },
       {
         name: "Findsnippets",
@@ -326,7 +372,7 @@ export const projects = [
         image: "findsnippets.png",
         link: "https://deft-bavarois-3cda74.netlify.app/",
         description:
-          "Platform where users can search and see Programming code snippets.",
+          "Plattform, auf der Nutzer Programmier-Code-Snippets suchen und ansehen können.",
       },
       {
         name: "Watch Trailers",
@@ -334,7 +380,7 @@ export const projects = [
         image: "watch-trailers.png",
         link: "https://watch-trailers.netlify.app/",
         description:
-          "Developed a website where users can watch the latest trailers.",
+          "Website entwickelt, auf der Nutzer die neuesten Trailer ansehen können.",
       },
       {
         name: "Uisnip",
@@ -342,7 +388,7 @@ export const projects = [
         image: "uisnip.png",
         link: "https://uisnip.netlify.app/",
         description:
-          "Developed a website where I can post UI code snippets with a preview.",
+          "Website entwickelt, auf der UI-Code-Snippets mit Vorschau veröffentlicht werden.",
       },
       {
         name: "Templatezip",
@@ -350,7 +396,7 @@ export const projects = [
         image: "templatezip.png",
         link: "https://templatezip-6c163f-1997-09-11-master-test-v1.netlify.app/",
         description:
-          "Platform to sell Website/Ionic templates. Integrated with 'Stripe' for payments.",
+          "Plattform zum Verkauf von Website-/Ionic-Templates. Integriert mit Stripe für Zahlungen.",
       },
       {
         name: "Webdevfix",
@@ -358,14 +404,14 @@ export const projects = [
         image: "webdevfix.png",
         link: "https://regal-sunflower-1eb4ea.netlify.app/",
         description:
-          "Blogging site where I used to post articles related to web development.",
+          "Blog-Website für Artikel rund um Webentwicklung.",
       },
       {
         name: "BirthdayWishes",
         technologies: "NextJs | Tailwind",
         image: "happybirthdaywishes.png",
         link: "https://flower-birthday-wishes-2024.netlify.app/",
-        description: "Statically generated site for birthday wishes.",
+        description: "Statisch generierte Seite für Geburtstagswünsche.",
       },
       {
         name: "Webdevfix V2",
@@ -373,7 +419,7 @@ export const projects = [
         image: "webdevfix-v2.png",
         link: "https://luxury-douhua-ff4b5c.netlify.app/",
         description:
-          "Blogging site where I used to post articles related to web development.",
+          "Blog-Website für Artikel rund um Webentwicklung.",
       },
       {
         name: "Easy Recipes",
@@ -381,7 +427,7 @@ export const projects = [
         image: "easy-recipes.png",
         link: "https://ubiquitous-sprinkles-8ebcd3.netlify.app/",
         description:
-          "Platform where users can view and add Food Recipes. Experimental/Unfinished project.",
+          "Plattform zum Ansehen und Hinzufügen von Kochrezepten. Experimentelles Projekt.",
       },
       {
         name: "Website Builder",
@@ -389,14 +435,14 @@ export const projects = [
         image: "web-builder.png",
         link: "https://angry-albattani-0b857d.netlify.app",
         description:
-          "Platform where users can create webpages using the drag and drop method. Experimental project.",
+          "Plattform, auf der Nutzer Webseiten per Drag & Drop erstellen können. Experimentelles Projekt.",
       },
       {
         name: "Programming Reference",
         technologies: "Html | Css | JavaScript",
         image: "js-ref.png",
         link: "https://jsref-cocky-spence-0b6696.netlify.app/js_ref",
-        description: "Cheatsheet that I used to have a quick look at syntaxes.",
+        description: "Spickzettel für einen schnellen Blick auf Syntaxen.",
       },
       {
         name: "Drawing Board",
@@ -404,23 +450,23 @@ export const projects = [
         image: "board.png",
         link: "https://friendly-mayer-211aa3.netlify.app/",
         description:
-          "A drawing board where the user can use the mouse to draw on the screen. Experimental project.",
+          "Zeichenbrett, auf dem der Nutzer mit der Maus auf dem Bildschirm zeichnen kann. Experimentelles Projekt.",
       },
       {
-        name: "Fallinfo - A Blogging Site",
+        name: "Fallinfo - Blog",
         technologies: "Html | Css | JavaScript | jQuery",
         image: "fallinfo.png",
         link: "https://naughty-montalcini-80b80f.netlify.app/",
         description:
-          "A blogging website I've developed to post articles about development. Experimental project.",
+          "Blog-Website für Artikel über Entwicklung. Experimentelles Projekt.",
       },
       {
-        name: "Fallinfo 2 - A Blogging Site",
+        name: "Fallinfo 2 - Blog",
         technologies: "Html | Css | JavaScript | jQuery",
         image: "fallinfo-2.png",
         link: "https://upbeat-ritchie-7dac35.netlify.app",
         description:
-          "A blogging website I've developed to post articles about development. Experimental project.",
+          "Blog-Website für Artikel über Entwicklung. Experimentelles Projekt.",
       },
       {
         name: "HTML Table Generator",
@@ -428,7 +474,7 @@ export const projects = [
         image: "html-table.png",
         link: "https://hungry-brahmagupta-7056b6.netlify.app/",
         description:
-          "Website where users can generate large sets of HTML tables with GUI. Experimental project.",
+          "Website, auf der Nutzer grosse HTML-Tabellen mit GUI generieren können. Experimentelles Projekt.",
       },
       {
         name: "YouVsBot",
@@ -436,7 +482,7 @@ export const projects = [
         image: "youvsbot.png",
         link: "https://zen-pike-e7a567.netlify.app/#/",
         description:
-          "Simple gaming web app with 4 different games. Learning/Experimental project.",
+          "Einfache Gaming-Web-App mit 4 verschiedenen Spielen. Lern-/Experimentelles Projekt.",
       },
     ],
   },

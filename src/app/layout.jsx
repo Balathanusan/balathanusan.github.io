@@ -5,16 +5,16 @@ import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Balathanusan Jeyarasan | Portfolio',
-  description: 'Discover the creative front-end development portfolio of Balathanusan Jeyarasan.',
-  keywords: 'Balathanusan Jeyarasan, Portfolio',
+  title: 'Balathanusan Jeyarasan | Freelance Softwareentwickler',
+  description: 'Freelance Softwareentwickler in der Schweiz — Webentwicklung, Mobile Apps, UI/UX Design und mehr.',
+  keywords: 'Balathanusan Jeyarasan, Freelance, Softwareentwickler, Webentwicklung, Schweiz',
   authors: [{ name: 'Balathanusan Jeyarasan' }],
   openGraph: {
-    locale: 'en',
-    siteName: 'Balathanusan Jeyarasan | Portfolio',
+    locale: 'de',
+    siteName: 'Balathanusan Jeyarasan | Freelance Softwareentwickler',
     url: 'https://balathanusan.github.io/',
-    title: 'Balathanusan Jeyarasan | Portfolio',
-    description: 'Discover the creative front-end development portfolio of Balathanusan Jeyarasan.',
+    title: 'Balathanusan Jeyarasan | Freelance Softwareentwickler',
+    description: 'Freelance Softwareentwickler in der Schweiz — Webentwicklung, Mobile Apps, UI/UX Design und mehr.',
     images: [
       {
         url: 'https://balathanusan.github.io/assets/cover.png',
@@ -24,15 +24,15 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     url: 'https://balathanusan.github.io/',
-    title: 'Balathanusan Jeyarasan | Portfolio',
-    description: 'Discover the creative front-end development portfolio of Balathanusan Jeyarasan.',
+    title: 'Balathanusan Jeyarasan | Freelance Softwareentwickler',
+    description: 'Freelance Softwareentwickler in der Schweiz — Webentwicklung, Mobile Apps, UI/UX Design und mehr.',
     images: ['https://balathanusan.github.io/assets/cover.png'],
   },
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="de">
       <head>
         <link type="image/x-icon" rel="shortcut icon" href="/assets/favicon.ico" />
       </head>

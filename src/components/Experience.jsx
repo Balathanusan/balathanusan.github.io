@@ -17,9 +17,9 @@ export default function Experience() {
 
   return (
     <div id="experience" className="max-w-7xl mx-auto px-6 md:px-12 py-12">
-      <div className="font-bold text-center text-2xl mb-20">Experience</div>
+      <div className="font-bold text-center text-2xl mb-20">Projekte</div>
       <div className="space-y-14">
-        {projects.map((project) => {
+        {projects.filter((project) => !project.hidden).map((project) => {
           return (
             <div key={project.title}>
               <div className="flex flex-col sm:flex-row sm:items-baseline mb-6">
@@ -53,7 +53,7 @@ export default function Experience() {
                           </p>
                           {item.new || item.soon ? (
                             <span className="bg-theme text-black block py-0 px-2 rounded-sm text-sm font-medium">
-                              {item.soon ? "Soon" : "New"}
+                              {item.soon ? "Bald" : "Neu"}
                             </span>
                           ) : null}
                         </div>
@@ -72,7 +72,7 @@ export default function Experience() {
                           rel="noopener noreferrer"
                           className={`text-white/50 w-full block mt-auto py-3 text-center text-sm hover:text-white transition-colors border-t border-t-[#000000]`}
                         >
-                          View
+                          Ansehen
                         </a>
                       </div>
                     </div>
@@ -84,8 +84,8 @@ export default function Experience() {
         })}
       </div>
       <div className="text-white/50 text-lg text-center mt-16 italic">
-        "In the realm of creativity, every abandoned project is a stepping stone
-        to mastery."
+        &laquo;Im Reich der Kreativität ist jedes aufgegebene Projekt ein
+        Sprungbrett zur Meisterschaft.&raquo;
       </div>
     </div>
   );
