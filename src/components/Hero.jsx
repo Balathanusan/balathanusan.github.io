@@ -18,17 +18,18 @@ export default function Hero() {
       <div className="flex-1 flex items-center">
         <div className="w-full">
           <div className="font-medium md:text-lg text-white/80">
-            Hi, I'm Balathanusan
+            Hallo, ich bin Balathanusan
           </div>
           <div className="font-bold text-3xl md:text-5xl mt-2">
-            Software Developer
+            Freelance Softwareentwickler
           </div>
           <p className="text-white/80 md:text-lg font-medium max-w-lg mt-2">
-            A passionate Engineer with 4+ years of professional experience
-            crafting modern, dynamic and responsive user interfaces.
+            Ihr Partner für moderne Webseiten, Apps und digitale Lösungen — mit
+            über 6+ Jahren Erfahrung in der Entwicklung dynamischer und
+            responsiver Benutzeroberflächen.
           </p>
           <div className="mt-8 flex gap-4 items-center">
-            <a
+            {/* <a
               onClick={() => viewed("LinkedIn")}
               className="transition-all opacity-70 hover:opacity-100 hover:scale-125"
               target="_blank"
@@ -40,7 +41,7 @@ export default function Hero() {
                 src="/assets/icons/logo-linkedin.svg"
                 alt="LinkedIn"
               />
-            </a>
+            </a> */}
             <a
               onClick={() => viewed("Github")}
               className="transition-all opacity-70 hover:opacity-100 hover:scale-125"

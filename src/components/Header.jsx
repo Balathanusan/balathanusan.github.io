@@ -49,6 +49,12 @@ export default function Header() {
         </div>
         <div className="space-x-3 md:space-x-6">
           <span
+            onClick={() => goTo("services")}
+            className="cursor-pointer text-white/50 hover:text-white transition-colors"
+          >
+            Leistungen
+          </span>
+          <span
             onClick={() => goTo("highlights")}
             className="cursor-pointer text-white/50 hover:text-white transition-colors"
           >
@@ -64,13 +70,13 @@ export default function Header() {
             onClick={() => goTo("experience")}
             className="cursor-pointer text-white/50 hover:text-white transition-colors"
           >
-            Experience
+            Projekte
           </span>
           <span
             onClick={() => goTo("contact")}
             className="cursor-pointer text-white/50 hover:text-white transition-colors"
           >
-            Contact
+            Kontakt
           </span>
         </div>
       </div>

@@ -95,10 +95,10 @@ export default function Contact() {
     <div id="contact" className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:flex">
       <div className="flex-1">
         <div className="font-bold text-2xl sm:text-4xl mb-4">
-          Anything else? <br /> Let's talk
+          Haben Sie ein Projekt? <br /> Lassen Sie uns sprechen
         </div>
         <span className="text-white/50">
-          Reach out via Email:{" "}
+          Kontakt per E-Mail:{" "}
           <a
             href={"mailto:" + myEmail}
             className="transition-colors hover:text-white/80"
@@ -114,7 +114,7 @@ export default function Contact() {
             onChange={onEmail}
             className={`w-full bg-secondary p-3 rounded-md text-white placeholder:text-white/50 hover:outline-none active:outline-none border border-transparent focus:border-white/80 focus:outline-none disabled:opacity-50`}
             type="text"
-            placeholder="Email"
+            placeholder="E-Mail"
             disabled={submitting}
           />
           <span
@@ -122,7 +122,7 @@ export default function Contact() {
               emailError ? "opacity-1" : "opacity-0"
             }`}
           >
-            Enter a valid Email*
+            Bitte geben Sie eine gültige E-Mail-Adresse ein*
           </span>
         </div>
         <div>
@@ -130,7 +130,7 @@ export default function Contact() {
             value={message}
             onChange={onMessage}
             className={`bg-secondary w-full p-3 rounded-md text-white placeholder:text-white/50 hover:outline-none active:outline-none border border-transparent focus:border-white/80 focus:outline-none resize-none disabled:opacity-50`}
-            placeholder="Message"
+            placeholder="Nachricht"
             rows="8"
             disabled={submitting}
           ></textarea>
@@ -139,16 +139,16 @@ export default function Contact() {
               messageError ? "opacity-1" : "opacity-0"
             }`}
           >
-            Enter the message
+            Bitte geben Sie eine Nachricht ein
           </span>
         </div>
         <div className="flex justify-between items-center">
           <div>
             {submitSuccess ? (
-              <span className="text-theme">Thank you. Message received.</span>
+              <span className="text-theme">Vielen Dank. Nachricht erhalten.</span>
             ) : null}
             {submitError ? (
-              <span className={`text-red-700`}>Something went wrong.</span>
+              <span className={`text-red-700`}>Etwas ist schiefgelaufen.</span>
             ) : null}
           </div>
           <button
@@ -156,7 +156,7 @@ export default function Contact() {
             className="rounded-md py-3 px-10 text-white/50 transition-colors hover:text-white bg-secondary disabled:opacity-50"
             disabled={submitting}
           >
-            Send
+            Senden
           </button>
         </div>
       </div>
